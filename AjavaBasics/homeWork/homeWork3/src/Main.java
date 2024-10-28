@@ -25,10 +25,16 @@ public class Main {
         byte byteNum = 67; //зачем использовать больше памяти, когда можно меньше
 
         //Task 3
-        int countLP = 23;
-        int counAS = 27;
-        int countEA = 30;
-        
+        int studentsLP = 23;
+        int studentsAS = 27;
+        int studentsEA = 30;
+        int totalPaper = 480;
+        float sheetsPerStudent = totalPaper / (float) (studentsLP + studentsAS + studentsEA);
+        System.out.println("\n" + "Task 3");
+        System.out.printf("На каждого ученика рассчитано %.1f листов бумаги", sheetsPerStudent);
+
+        //Task 4
+
 
     }
 }
