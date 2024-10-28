@@ -18,11 +18,17 @@ public class Main {
         //Task 2
         float floatNum = 27.12f; //Можно использовать double но так меньше памяти требуется
         long longNum = 987_678_965_549L;
-        double doubleNum = 2.786; //Можно использовать и float но для разнообразия
+        double doubleNum = 2.786; //Можно использовать и float но для разнообразия и чаще используется
         short shortNum = 569; // в byte не поместится, но можно использовать int, long
         int intNum = -159; //можно было сделать как и в предидущем примере но int чаще используют для цело численных значений
         short shortNum2 = 27897;
         byte byteNum = 67; //зачем использовать больше памяти, когда можно меньше
+
+        //Task 3
+        int countLP = 23;
+        int counAS = 27;
+        int countEA = 30;
+        
 
     }
 }
