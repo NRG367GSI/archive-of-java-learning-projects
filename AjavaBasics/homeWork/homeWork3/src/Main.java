@@ -131,6 +131,9 @@ public class Main {
         System.out.printf("Если спортсмен будет терять каждый день по 500 грамм, уйдет %d дней \n", secondCaseMode);
         System.out.printf("В среднем потребуется %d дней \n", onAverageDays);
 
+        //Task 8
+        System.out.println("\n\nTask 7");
+
 
 
 
