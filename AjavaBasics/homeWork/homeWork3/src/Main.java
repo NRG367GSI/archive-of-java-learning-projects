@@ -133,12 +133,48 @@ public class Main {
 
         //Task 8
         System.out.println("\n\nTask 7");
+        //В этом задании можно было использовать int но я решил использовать float так как значения могли получиться дробные
+
+        float salaryIncrease = 10f;
+        float getsMasha = 67760f;
+        float getsDenis = 83690f;
+        float getsCristina = 76230f;
+
+        float newSelaryMasha = getsMasha + salaryIncrease * getsMasha / 100;
+        float newSelaryDenis = getsDenis + salaryIncrease * getsDenis / 100;
+        float newSelaryCristina = getsCristina + salaryIncrease * getsCristina / 100;
 
 
+        System.out.printf("Новая зарплата Маши: %,.2f рублей\n" +
+                "Новая зарплата Дениса: %,.2f рублей\n" +
+                "Новая зарплата Крестины: %,.2f рублей\n", newSelaryMasha, newSelaryDenis, newSelaryCristina);
 
+        float yearlyEarningsMasha = getsMasha * 12;
+        float yearlyEarningsDenis = getsDenis * 12;
+        float yearlyEarningsCristina = getsCristina * 12;
 
+        System.out.printf("\nГодовая зарплата до повышения:\n" +
+                "Маши: %,.2f рублей\n" +
+                "Дениса: %,.2f рублей\n" +
+                "Крестины: %,.2f рублей\n", yearlyEarningsMasha, yearlyEarningsDenis, yearlyEarningsCristina);
 
+        float newYearlyEarningsMasha = newSelaryMasha * 12;
+        float newYearlyEarningsDenis = newSelaryDenis * 12;
+        float newYearlyEarningsCristina = newSelaryCristina * 12;
 
+        System.out.printf("\nГодовая зарплата после повышения:\n" +
+                "Маши: %,.2f рублей\n" +
+                "Дениса: %,.2f рублей\n" +
+                "Крестины: %,.2f рублей\n", newYearlyEarningsMasha, newYearlyEarningsDenis, newYearlyEarningsCristina);
+
+        float incomeReductionMasha = newYearlyEarningsMasha - yearlyEarningsMasha;
+        float incomeReductionDenis = newYearlyEarningsDenis - yearlyEarningsDenis;
+        float incomeReductionCrestina = newYearlyEarningsCristina - yearlyEarningsCristina;
+
+        System.out.printf("\nГодовая зарплата увеличилась на:\n" +
+                "у Маши: %,.2f рублей\n" +
+                "у Дениса: %,.2f рублей\n" +
+                "у Крестины: %,.2f рублей\n", incomeReductionMasha, incomeReductionDenis, incomeReductionCrestina);
 
     }
 }
