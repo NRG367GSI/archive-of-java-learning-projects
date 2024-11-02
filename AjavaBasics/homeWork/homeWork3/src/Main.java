@@ -9,10 +9,10 @@ public class Main {
         double numDouble = 1.7E308;
         System.out.println("Task 1");
         System.out.printf("byte numByte = %d%n", numByte);
-        System.out.printf("short numShort = %d%n", numShort);
-        System.out.printf("int numInt = %d%n", numInt);
-        System.out.printf("long numLong = %d%n", numLong);
-        System.out.printf("float numFloat = %.2f%n", numFloat);
+        System.out.printf("short numShort = %,d%n", numShort);
+        System.out.printf("int numInt = %,d%n", numInt);
+        System.out.printf("long numLong = %,d%n", numLong);
+        System.out.printf("float numFloat = %,.2f%n", numFloat);
         System.out.printf("double numDouble = %.2e%n", numDouble);
 
         //Task 2
@@ -175,6 +175,5 @@ public class Main {
                 "у Маши: %,.2f рублей\n" +
                 "у Дениса: %,.2f рублей\n" +
                 "у Крестины: %,.2f рублей\n", incomeReductionMasha, incomeReductionDenis, incomeReductionCrestina);
-
     }
 }
