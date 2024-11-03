@@ -34,6 +34,15 @@ public class Main {
         System.out.println("\n");
 
         //Task 3
+        System.out.println("Task 3");
+
+        int spead = rd.nextInt(30, 100);
+        if (spead > 60) {
+            System.out.printf("Если скорость %d, то придется заплатить штраф!", spead);
+        } else {
+            System.out.printf("Если скорость %d, то можно ездить спокойно!", spead);
+        }
+        System.out.println("\n");
 
     }
 }
