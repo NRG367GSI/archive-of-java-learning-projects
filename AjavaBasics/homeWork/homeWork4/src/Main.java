@@ -6,11 +6,11 @@ public class Main {
         //Task 1
         System.out.println("Task 1");
         Random rd = new Random();
-        int age = rd.nextInt(0, 100);
-        if (age >= 18) {
-            System.out.printf("Если возраст человека равен: %d, то он совершеннолетний!", age);
+        int numberPeople = rd.nextInt(0, 100);
+        if (numberPeople >= 18) {
+            System.out.printf("Если возраст человека равен: %d, то он совершеннолетний!", numberPeople);
         } else {
-            System.out.printf("Если возраст человека равен: %d, то он не достиг совершеннолетия, нужно не много подождать!", age);
+            System.out.printf("Если возраст человека равен: %d, то он не достиг совершеннолетия, нужно не много подождать!", numberPeople);
         }
 
         System.out.println("\n");
@@ -46,9 +46,32 @@ public class Main {
         if (years > 7 && years < 17) System.out.printf("Если возраст человека равен %d, то ему нужно ходить в школу!", years);
         if (years >= 18 && years <= 24) System.out.printf("Если возраст человека равен %d, то его место в университете!", years);
         if (years > 24 ) System.out.printf("Если возраст человека равен %d, то ему пора ходить на работу!", years);
+        System.out.println("\n");
 
         //Task 5
         System.out.println("Task 5");
+        int yearsСhild = rd.nextInt(0, 15);
+        if (yearsСhild < 5) System.out.printf("Если возраст ребенка равен %d, то ему " +
+                "нельзя кататься на аттракционе!", yearsСhild);
+        if (yearsСhild > 5 && yearsСhild < 14) System.out.printf("Если возраст ребенка равен %d, то ему " +
+                "может кататься только в сопровождении взрослого. Если взрослого нет, то кататься нельзя!", yearsСhild);
+        if (yearsСhild > 14 ) System.out.printf("Если возраст ребенка равен %d, то он " +
+                "может кататься без сопровождения взрослого!", yearsСhild);
+
+        //Task 6
+        System.out.println("\n");
+        System.out.println("Task 6");
+
+        int numberOfPeople = rd.nextInt(0, 103);
+        if (numberOfPeople < 60) {
+            System.out.printf("В вагоне человек: %d, есть сидячие места!", numberOfPeople);
+        } else if ( numberOfPeople > 60 && numberOfPeople < 102){
+            System.out.printf("В вагоне человек: %d, нет сидячие мест!", numberOfPeople);
+        } else {
+            System.out.printf("В вагоне человек: %d, в вагоне нет мест!", numberOfPeople);
+        }
+
+
 
 
 
