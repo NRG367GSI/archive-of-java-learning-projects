@@ -42,9 +42,9 @@ public class Main {
         //Task 4
         System.out.println("Task 4");
         int years = rd.nextInt(0, 30);
-        if (years > 2 && years < 6) {
+        if (years >= 3 && years < 6) {
             System.out.printf("Если возраст человека равен %d, то ему нужно ходить в детский сад!\n", years);
-        } else if (years >= 6 && years < 17) {
+        } else if (years >= 6 && years < 18) {
             System.out.printf("Если возраст человека равен %d, то ему нужно ходить в школу!\n", years);
         } else if (years >= 18 && years <= 24) {
             System.out.printf("Если возраст человека равен %d, то его место в университете!\n", years);
@@ -101,13 +101,5 @@ public class Main {
                 System.out.printf("из трех чисел бо́льшее three = %d", three);
             }
         }
-
-
-
-
-
-
-
-
     }
 }
