@@ -4,14 +4,13 @@ public class Main {
         System.out.println("\n");
         System.out.println("Task 1");
 
-        char clientOS = '0';
-        switch (clientOS) {
-            case '0':
-                System.out.println("Установите версию приложения для iOS по ссылке");
-                break;
-            case '1':
-                System.out.println("Установите версию приложения для Android по ссылке");
-                break;
+        int clientOS = 0;
+        if (clientOS == 0) {
+            System.out.println("Установите версию приложения для iOS по ссылке");
+        } else if (clientOS == 1) {
+            System.out.println("Установите версию приложения для Android по ссылке");
+        } else {
+            System.out.println("Выходит за приделы значений!");
         }
 
         //Task 2
@@ -81,69 +80,69 @@ public class Main {
         System.out.println("\n");
         System.out.println("Task 5");
 
-        for (int monthNumber = 0; monthNumber < 20; monthNumber++) {
-            //int monthNumber = 1; // Номер месяца
-            String season = ""; // Переменная для хранения сезона
-            String getMonthName = ""; // Переменная для хранения названия месяца
 
-            // Проверка на допустимость номера месяца
-            if (monthNumber > 1 || monthNumber < 12) {
-                switch (monthNumber) {
-                    case 1:
-                        getMonthName = "Январь";
-                        season = "зима";
-                        break;
-                    case 2:
-                        getMonthName = "Февраль";
-                        season = "зима";
-                        break;
-                    case 3:
-                        getMonthName = "Март";
-                        season = "весна";
-                        break;
-                    case 4:
-                        getMonthName = "Апрель";
-                        season = "весна";
-                        break;
-                    case 5:
-                        getMonthName = "Май";
-                        season = "весна";
-                        break;
-                    case 6:
-                        getMonthName = "Июнь";
-                        season = "лето";
-                        break;
-                    case 7:
-                        getMonthName = "Июль";
-                        season = "лето";
-                        break;
-                    case 8:
-                        getMonthName = "Август";
-                        season = "лето";
-                        break;
-                    case 9:
-                        getMonthName = "Сентябрь";
-                        season = "осень";
-                        break;
-                    case 10:
-                        getMonthName = "Октябрь";
-                        season = "осень";
-                        break;
-                    case 11:
-                        getMonthName = "Ноябрь";
-                        season = "осень";
-                        break;
-                    case 12:
-                        getMonthName = "Декабрь";
-                        season = "зима";
-                        break;
-                    default:
-                        season = "неизвестный сезон";
-                        // Этот блок не должен сработать, так как мы проверили номер месяца выше
-                        break;
-                }
-                System.out.println(monthNumber + "-й месяц (он же " + getMonthName + ") принадлежит к сезону " + season + ".");
+        int monthNumber = 7; // Номер месяца
+        String season = ""; // Переменная для хранения сезона
+        String getMonthName = ""; // Переменная для хранения названия месяца
+
+        // Проверка на допустимость номера месяца
+        if (monthNumber >= 1 || monthNumber <= 12) {
+            switch (monthNumber) {
+                case 1:
+                    getMonthName = "Январь";
+                    season = "зима";
+                    break;
+                case 2:
+                    getMonthName = "Февраль";
+                    season = "зима";
+                    break;
+                case 3:
+                    getMonthName = "Март";
+                    season = "весна";
+                    break;
+                case 4:
+                    getMonthName = "Апрель";
+                    season = "весна";
+                    break;
+                case 5:
+                    getMonthName = "Май";
+                    season = "весна";
+                    break;
+                case 6:
+                    getMonthName = "Июнь";
+                    season = "лето";
+                    break;
+                case 7:
+                    getMonthName = "Июль";
+                    season = "лето";
+                    break;
+                case 8:
+                    getMonthName = "Август";
+                    season = "лето";
+                    break;
+                case 9:
+                    getMonthName = "Сентябрь";
+                    season = "осень";
+                    break;
+                case 10:
+                    getMonthName = "Октябрь";
+                    season = "осень";
+                    break;
+                case 11:
+                    getMonthName = "Ноябрь";
+                    season = "осень";
+                    break;
+                case 12:
+                    getMonthName = "Декабрь";
+                    season = "зима";
+                    break;
+                default:
+                    season = "неизвестный сезон";
+                    // Этот блок не должен сработать, так как мы проверили номер месяца выше
+                    break;
             }
+            System.out.println(monthNumber + "-й месяц (он же " + getMonthName + ") принадлежит к сезону " + season + ".");
+
         }
     }
 }
