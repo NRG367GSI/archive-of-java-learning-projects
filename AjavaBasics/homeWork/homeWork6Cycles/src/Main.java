@@ -80,5 +80,24 @@ public class Main {
             int result = num * multiplier;
             System.out.printf("%dX%d=%d\n",num, multiplier, result);
         }
+
+        // Cycles lesson 2
+        //Task 1
+        System.out.println("\n\nCycles lesson 2, Task 1");
+
+        double accumulateFunds = 2_459_000;
+        double postpoing = 15_000;
+        double savings = 0;
+        int months = 0;
+
+        while (savings <= accumulateFunds) {
+            months++;
+            savings += postpoing;
+        }
+        System.out.printf("Месяцев %d, сумма накоплений равна %,.2f рублей\n", months, savings);
+
+        //Task 2
+        System.out.println("\n\nCycles lesson 2, Task 2");
+
     }
 }
