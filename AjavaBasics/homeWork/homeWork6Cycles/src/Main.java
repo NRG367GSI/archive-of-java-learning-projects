@@ -97,7 +97,7 @@ public class Main {
         System.out.printf("Месяцев %d, сумма накоплений равна %,.2f рублей\n", months, savings);
 
         //Task 2
-        System.out.println("\n\nCycles lesson 2, Task 2");
+        //System.out.println("\n\nCycles lesson 2, Task 2");
 
     }
 }
