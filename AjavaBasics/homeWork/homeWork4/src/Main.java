@@ -4,9 +4,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         //Task 1
-<<<<<<< HEAD
 
-=======
         System.out.println("Task 1");
         Random rd = new Random();
         int numberPeople = rd.nextInt(0, 100);
@@ -15,7 +13,6 @@ public class Main {
         } else {
             System.out.printf("Если возраст человека равен: %d, то он не достиг совершеннолетия, нужно не много подождать!", numberPeople);
         }
->>>>>>> work
 
         System.out.println("\n");
 
@@ -46,7 +43,7 @@ public class Main {
         //Task 4
         System.out.println("Task 4");
         int years = rd.nextInt(0, 30);
-        if (3 <= years && years < 6) {cd
+        if (3 <= years && years < 6) {
             System.out.printf("Если возраст человека равен %d, то ему нужно ходить в детский сад!\n", years);
         } else if (years >= 6 && years < 18) {
             System.out.printf("Если возраст человека равен %d, то ему нужно ходить в школу!\n", years);
