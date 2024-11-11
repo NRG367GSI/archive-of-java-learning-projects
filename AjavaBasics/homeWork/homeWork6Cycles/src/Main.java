@@ -97,7 +97,60 @@ public class Main {
         System.out.printf("Месяцев %d, сумма накоплений равна %,.2f рублей\n", months, savings);
 
         //Task 2
-        //System.out.println("\n\nCycles lesson 2, Task 2");
+        System.out.println("\n\nCycles lesson 2, Task 2");
+
+        int count = 0;
+        while (count < 10) {
+            count++;
+            System.out.print(count + " ");
+        }
+        System.out.println();
+        for (;count > 0; count--){
+            System.out.print(count + " ");
+        }
+
+        //Task 3
+        System.out.println("\n\nCycles lesson 2, Task 3");
+
+        int populationCountryY = 12_000_000;
+        int giveBirth = 17 * populationCountryY / 1000;
+        int mortalityRate = 8 * populationCountryY / 1000;
+        int years = 10;
+        for (int time = 1; time < years + 1; time++) {
+            populationCountryY += giveBirth;
+            populationCountryY -= mortalityRate;
+            System.out.printf("Год %d, численность населения составляет: %,d\n", time, populationCountryY);
+        }
+
+        //Task 4
+        System.out.println("\n\nCycles lesson 2, Task 4");
+        double contribution = 15_000;
+        double interestRate = 7;
+        double purposeAccumulation = 12_000_000;
+        int month = 0;
+        while (contribution <= purposeAccumulation) {
+            contribution += interestRate * contribution / 100;
+            month++;
+            System.out.printf("Через %d месяцев, сумма накоплений составляет: %,.2f рублей\n", month, contribution);
+        }
+
+        //Task 5
+        System.out.println("\n\nCycles lesson 2, Task 5");
+        double contribut = 15_000;
+        double interRate = 7;
+        double purpAccum = 12_000_000;
+        int mont = 0;
+        while (contribut <= purpAccum) {
+            contribut += interRate * contribut / 100;
+            mont++;
+            if (mont == 6 || mont == 12 || mont == 18 || mont == 24 || mont > 24) {
+                System.out.printf("Через %d месяцев, сумма накоплений составляет: %,.2f рублей\n", mont, contribut);
+            }
+
+        }
+
+
+
 
     }
 }
