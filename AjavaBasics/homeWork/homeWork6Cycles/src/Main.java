@@ -19,13 +19,13 @@ public class Main {
         }
 
         // Task 4
-        System.out.print("\n\nTask 4\n");
+        System.out.println("\n\nTask 4");
         for (int l = -10; l < 11; l++){
             System.out.print(l + ", ");
         }
 
         // Task 5
-        System.out.print("\n\nTask 5\n");
+        System.out.println("\n\nTask 5");
 
         boolean isLeapYear = false;
         // for (int year = 1904;  year <= 2096; year += 4) в данном задании было бы достаточно
@@ -41,5 +41,44 @@ public class Main {
             }
         }
 
+        // Task 6
+        System.out.println("\n\nTask 6");
+        for (int sum7 = 7; sum7 < 100; sum7 += 7){
+            System.out.print(sum7 + ", ");
+        }
+
+        // Task 7
+        System.out.println("\n\nTask 7");
+
+        for (int multiply2 = 2; multiply2 <= 512; multiply2 *=2){
+            System.out.print(multiply2 + ", ");
+        }
+
+        // Task 8
+        System.out.println("\n\nTask 8");
+
+        double amountSavings = 0;
+        for (int month = 1; month <= 12; month++) {
+            amountSavings += 29000;
+            System.out.printf("Месяц %d, сумма накоплений равна %,.2f рублей\n", month, amountSavings);
+        }
+
+        // Task 9
+        System.out.println("\n\nTask 9");
+
+        double amountSavingsBank = 0;
+        for (int month = 1; month <= 12; month++) {
+            amountSavingsBank += amountSavingsBank / 100;
+            amountSavingsBank += 29000;
+            System.out.printf("Месяц %d, сумма накоплений равна %,.2f рублей\n", month, amountSavingsBank);
+        }
+
+        // Task 10
+        System.out.println("\n\nTask 10");
+        int num = 2;
+        for (int multiplier = 1; multiplier <= 10; multiplier++){
+            int result = num * multiplier;
+            System.out.printf("%dX%d=%d\n",num, multiplier, result);
+        }
     }
 }
