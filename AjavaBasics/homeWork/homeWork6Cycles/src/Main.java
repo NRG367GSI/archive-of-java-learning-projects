@@ -20,7 +20,7 @@ public class Main {
 
         // Task 4
         System.out.println("\n\nTask 4");
-        for (int l = -10; l < 11; l++){
+        for (int l = 10; l > -11; l--){
             System.out.print(l + ", ");
         }
 
