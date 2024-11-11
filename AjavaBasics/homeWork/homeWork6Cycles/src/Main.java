@@ -18,7 +18,11 @@ public class Main {
             System.out.print(k + ", ");
         }
 
-
+        // Task 4
+        System.out.println("\n\nTask 4");
+        for (int l = 10; l > -11; l--){
+            System.out.print(l + ", ");
+        }
 
         // Task 5
         System.out.println("\n\nTask 5");
