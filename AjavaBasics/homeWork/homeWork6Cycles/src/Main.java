@@ -149,6 +149,21 @@ public class Main {
 
         }
 
+        //Task 6
+        System.out.println("\n\nCycles lesson 2, Task 6");
+        double contribution9years = 15_000;
+        double bankInterestMonth = 0.07;
+        int depositPeriodMonth = 9 * 12;
+        for (int i = 1; i < depositPeriodMonth + 1; i++) {
+            contribution9years += bankInterestMonth * contribution9years;
+            if (i % 6 == 0) {
+                System.out.printf("Через %d месяцев, сумма накоплений составляет: %,.2f рублей\n", i, contribution9years);
+            }
+        }
+
+        //Task 7
+        System.out.println("\n\nCycles lesson 2, Task 7");
+
 
 
 
