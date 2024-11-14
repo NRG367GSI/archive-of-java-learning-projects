@@ -83,9 +83,11 @@ public class Main {
         //Task 7
         System.out.println("\n\nCycles lesson 2, Task 7");
 
-        int firstFriday = 1;
-        for (int day = 1; day < 31; day++) {
-
+        int friday = 3;
+        for (int day = 1; day <= 31; day++) {
+            if ((day - friday) % 7 == 0) {
+                System.out.println("Сегодня пятница, " + day + "-е число. Необходимо подготовить отчет.");
+            }
         }
 
 
