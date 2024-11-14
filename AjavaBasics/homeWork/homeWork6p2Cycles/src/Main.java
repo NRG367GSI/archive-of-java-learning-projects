@@ -90,9 +90,16 @@ public class Main {
             }
         }
 
-
-
-
+        //Task 8
+        //Что б избежать "магических чисел" можно ввести переменные
+        int cometPeriod = 79;
+        int currentYear = 2024;
+        int startYear = currentYear - 200;
+        int endYear = currentYear + 100;
+        for (int yare = 0; yare < endYear; yare += cometPeriod) {
+            if (yare >= startYear && yare <= endYear) { //yare <= endYear эта часть условия здесь не нужна так как цыкал закончится
+                System.out.println(yare);
+            }
+        }
     }
 }
-
