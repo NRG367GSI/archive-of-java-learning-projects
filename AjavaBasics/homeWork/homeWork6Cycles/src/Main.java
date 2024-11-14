@@ -2,25 +2,25 @@ public class Main {
     public static void main(String[] args) {
         // Task 1
         System.out.println("Task 1");
-        for (int i = 1; i < 11; i++){
+        for (int i = 1; i < 11; i++) {
             System.out.print(i + ", ");
         }
 
         // Task 2
         System.out.println("\n\nTask 2");
-        for (int j = 10; j > 0; j--){
+        for (int j = 10; j > 0; j--) {
             System.out.print(j + ", ");
         }
 
         // Task 3
         System.out.println("\n\nTask 3");
-        for (int k = 2; k < 18; k += 2){
+        for (int k = 2; k < 18; k += 2) {
             System.out.print(k + ", ");
         }
 
         // Task 4
         System.out.println("\n\nTask 4");
-        for (int l = 10; l > -11; l--){
+        for (int l = 10; l > -11; l--) {
             System.out.print(l + ", ");
         }
 
@@ -29,7 +29,7 @@ public class Main {
 
         boolean isLeapYear = false;
         // for (int year = 1904;  year <= 2096; year += 4) в данном задании было бы достаточно
-        for (int year = 1904;  year <= 2096; year++) {
+        for (int year = 1904; year <= 2096; year++) {
             boolean divisibleBy4 = (year % 4 == 0);
             boolean divisibleBy100 = (year % 100 == 0); //это условие не нужно
             boolean divisibleBy400 = (year % 400 == 0); //это условие не нужно
@@ -43,14 +43,14 @@ public class Main {
 
         // Task 6
         System.out.println("\n\nTask 6");
-        for (int sum7 = 7; sum7 < 100; sum7 += 7){
+        for (int sum7 = 7; sum7 < 100; sum7 += 7) {
             System.out.print(sum7 + ", ");
         }
 
         // Task 7
         System.out.println("\n\nTask 7");
 
-        for (int multiply2 = 2; multiply2 <= 512; multiply2 *=2){
+        for (int multiply2 = 2; multiply2 <= 512; multiply2 *= 2) {
             System.out.print(multiply2 + ", ");
         }
 
@@ -76,28 +76,9 @@ public class Main {
         // Task 10
         System.out.println("\n\nTask 10");
         int num = 2;
-        for (int multiplier = 1; multiplier <= 10; multiplier++){
+        for (int multiplier = 1; multiplier <= 10; multiplier++) {
             int result = num * multiplier;
-            System.out.printf("%dX%d=%d\n",num, multiplier, result);
+            System.out.printf("%dX%d=%d\n", num, multiplier, result);
         }
-
-        // Cycles lesson 2
-        //Task 1
-        System.out.println("\n\nCycles lesson 2, Task 1");
-
-        double accumulateFunds = 2_459_000;
-        double postpoing = 15_000;
-        double savings = 0;
-        int months = 0;
-
-        while (savings <= accumulateFunds) {
-            months++;
-            savings += postpoing;
-        }
-        System.out.printf("Месяцев %d, сумма накоплений равна %,.2f рублей\n", months, savings);
-
-        //Task 2
-        System.out.println("\n\nCycles lesson 2, Task 2");
-
     }
 }
