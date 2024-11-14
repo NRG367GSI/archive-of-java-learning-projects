@@ -56,11 +56,11 @@ public class Main {
         //Task 5
         System.out.println("\n\nCycles lesson 2, Task 5");
         double contribut = 15_000;
-        double interRate = 7;
+        double interRate = 0.07;
         double purpAccum = 12_000_000;
         int mont = 0;
         while (contribut <= purpAccum) {
-            contribut += interRate * contribut / 100;
+            contribut += interRate * contribut;
             mont++;
             if (mont == 6 || mont == 12 || mont == 18 || mont == 24 || mont > 24) {
                 System.out.printf("Через %d месяцев, сумма накоплений составляет: %,.2f рублей\n", mont, contribut);
@@ -72,10 +72,12 @@ public class Main {
         System.out.println("\n\nCycles lesson 2, Task 6");
         double contribution9years = 15_000;
         double bankInterestMonth = 0.07;
+        int reportPeriod = 6;
+        int beginningDepositMonth = 1;
         int depositPeriodMonth = 9 * 12;
-        for (int i = 1; i < depositPeriodMonth + 1; i++) {
+        for (int i = beginningDepositMonth; i <= depositPeriodMonth; i++) {
             contribution9years += bankInterestMonth * contribution9years;
-            if (i % 6 == 0) {
+            if (i % reportPeriod == 0) {
                 System.out.printf("Через %d месяцев, сумма накоплений составляет: %,.2f рублей\n", i, contribution9years);
             }
         }
@@ -84,13 +86,17 @@ public class Main {
         System.out.println("\n\nCycles lesson 2, Task 7");
 
         int friday = 3;
-        for (int day = 1; day <= 31; day++) {
-            if ((day - friday) % 7 == 0) {
+        int beginningMonth = 1;
+        int endMonth = 31;
+        int daysWeak = 7;
+        for (int day = beginningMonth; day <= endMonth; day++) {
+            if ((day - friday) % daysWeak == 0) {
                 System.out.println("Сегодня пятница, " + day + "-е число. Необходимо подготовить отчет.");
             }
         }
 
         //Task 8
+        System.out.println("\n\nCycles lesson 2, Task 8");
         //Что б избежать "магических чисел" можно ввести переменные
         int cometPeriod = 79;
         int currentYear = 2024;
