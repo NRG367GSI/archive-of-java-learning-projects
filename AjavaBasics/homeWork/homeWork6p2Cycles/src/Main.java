@@ -31,14 +31,15 @@ public class Main {
         //Task 3
         System.out.println("\n\nCycles lesson 2, Task 3");
 
-        int populationCountryY = 12_000_000;
-        int giveBirth = 17 * populationCountryY / 1000;
-        int mortalityRate = 8 * populationCountryY / 1000;
-        int years = 10;
-        for (int time = 1; time < years + 1; time++) {
-            populationCountryY += giveBirth;
-            populationCountryY -= mortalityRate;
-            System.out.printf("Год %d, численность населения составляет: %,d\n", time, populationCountryY);
+        int population = 12_000_000; // Initial population
+        int years = 10; // Number of years to simulate
+        double birthRate = 0.017; // Birth rate (17 per 1000)
+        double deathRate = 0.008; // Death rate (8 per 1000)
+        for (int year = 1; year <= years; year++) {
+            int births = (int) (birthRate * population);
+            int deaths = (int) (deathRate * population);
+            population += births - deaths;
+            System.out.printf("Год %d, численность населения составляет: %,d\n", year, population);
         }
 
         //Task 4
