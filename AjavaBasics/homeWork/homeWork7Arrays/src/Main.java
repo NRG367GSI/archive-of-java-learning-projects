@@ -6,11 +6,14 @@ public class Main {
         //Task 1
         System.out.println("Task 1");
         int[] arr1 = new int[]{1, 2, 3};
+        System.out.println(Arrays.toString(arr1));
         double[] arr2 = new double[]{1.57, 7.654, 9.986};
+        System.out.println(Arrays.toString(arr2));
         int[] arr3 = new int[12];
         for (int i = 0; i < arr3.length; i++) {
             arr3[i] = i;
         }
+        System.out.println(Arrays.toString(arr3));
 
         //Task 2
         System.out.println("Task 2");
@@ -75,24 +78,13 @@ public class Main {
         System.out.println("\n");
         System.out.println("Task 4");
 
-        int[] seq = arr1;
+        int[] seq = arr1; //зададим переменную что б проще было подставлять необходимый массив
         for (int i = 0; i < seq.length; i++){
             if (seq[i] % 2 != 0) {
                 seq[i] += 1;
             }
-            System.out.print(seq[i]);
-            if (i < seq.length - 1) {
-                System.out.print(", ");
-            }
         }
-        System.out.println();
         System.out.println(Arrays.toString(seq));
-
-
-
-
-
-
-
+        System.out.println();
     }
 }
