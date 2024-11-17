@@ -1,3 +1,6 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         //Task 1
@@ -67,6 +70,24 @@ public class Main {
                 System.out.print(", ");
             }
         }
+
+        //Task 4
+        System.out.println("\n");
+        System.out.println("Task 4");
+
+        int[] seq = arr1;
+        for (int i = 0; i < seq.length; i++){
+            if (seq[i] % 2 != 0) {
+                seq[i] += 1;
+            }
+            System.out.print(seq[i]);
+            if (i < seq.length - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println();
+        System.out.println(Arrays.toString(seq));
+
 
 
 
