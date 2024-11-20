@@ -17,7 +17,7 @@ public class Main {
         int min = expenses[0];
         int max = expenses[0];
         for (int i = 0; i < expenses.length; i++) {
-            if ( min > expenses[i]) {
+            if (min > expenses[i]) {
                 min = expenses[i];
             }
             if (max < expenses[i]) {
@@ -38,17 +38,15 @@ public class Main {
 
         //Task 4
         System.out.println("\n\nTask 4");
-        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
         char temp;
         for (int i = 0; i < reverseFullName.length / 2; i++) {
             temp = reverseFullName[i];
-            reverseFullName[i] = reverseFullName[reverseFullName.length - 1- i];
-            reverseFullName[reverseFullName.length - 1- i] = temp;
+            reverseFullName[i] = reverseFullName[reverseFullName.length - 1 - i];
+            reverseFullName[reverseFullName.length - 1 - i] = temp;
         }
         String fullName = new String(reverseFullName);
         System.out.print(fullName);
-
-
 
 
     }
