@@ -12,7 +12,7 @@ public class Main {
 
         //Task 2
         System.out.println("\n\nTask 2");
-        System.out.printf("Данные Ф. И. О. сотрудника для заполнения отчета - %s", fullName.toUpperCase(Locale.ROOT));
+        System.out.printf("Данные Ф. И. О. сотрудника для заполнения отчета - %s", fullName.toUpperCase());
 
         //Task 3
         System.out.println("\n\nTask 3");

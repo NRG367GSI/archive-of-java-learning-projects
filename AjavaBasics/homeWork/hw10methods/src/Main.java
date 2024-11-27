@@ -13,6 +13,11 @@ public class Main {
         applicWerson(0, currentYear);
 
         //Task 3
+        System.out.println("\n");
+        System.out.println("Task 3");
+
+        int deliveryDistance = 20;
+        cardDelivery(deliveryDistance);
 
 
     }
@@ -48,6 +53,19 @@ public class Main {
         } else {
             System.out.println("Установите версию приложения для Android по ссылке");
         }
+    }
 
+    //Task 3
+    public static void cardDelivery(int distance) {
+        int delivery = 1;
+        if (distance >= 0 && distance <= 20) {
+            System.out.println("Потребуется дней: " + delivery);
+        } else if (distance > 20 && distance <= 60) {
+            System.out.println("Потребуется дней: " + (delivery + 1));
+        } else if (distance > 60 && distance <= 100) {
+            System.out.println("Потребуется дней: " + (delivery + 2));
+        } else {
+            System.out.println("Свыше 100 км доставки нет");
+        }
     }
 }
