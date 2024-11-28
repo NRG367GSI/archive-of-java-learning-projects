@@ -13,5 +13,10 @@ public class Main {
 
         System.out.printf("Название книги: %s, Автор: %s %s, Год публикации: %d\n",
                 book2.getTitleBook(), book2.getAuthor().getFirstName(), book2.getAuthor().getLastName(), book2.getYearPublication());
+
+        book2.setYearPublication(1870);
+        System.out.printf("Название книги: %s, Автор: %s %s, Год публикации: %d\n",
+                book2.getTitleBook(), book2.getAuthor().getFirstName(), book2.getAuthor().getLastName(), book2.getYearPublication());
+
     }
 }
