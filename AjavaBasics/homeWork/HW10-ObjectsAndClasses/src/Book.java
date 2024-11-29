@@ -40,6 +40,7 @@ public class Book {
         return "Название книги: " + getTitleBook() + "\nАвтор:" + getAuthor() + "\nГод публикации: " + getYearPublication() + "\n";
     }
 
+    @Override
     public boolean equals(Object object) {
         if (this == object) {
             return true;
@@ -52,5 +53,10 @@ public class Book {
         boolean isAuthor = Objects.equals(this.author, book.author);
         boolean isYearPublication = this.yearPublication == book.yearPublication;
         return   isTitleBook && isAuthor && isYearPublication;
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 }
