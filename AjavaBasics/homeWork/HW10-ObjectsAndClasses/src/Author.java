@@ -40,4 +40,8 @@ public class Author {
         Author author = (Author) obj;
         return Objects.equals(this.firstName, author.firstName) && Objects.equals(this.lastName, author.lastName);
     }
+
+    public int hashCode() {
+        return Objects.hash(this.firstName, this.lastName);
+    }
 }

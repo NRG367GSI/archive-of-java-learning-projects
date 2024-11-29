@@ -50,7 +50,7 @@ public class Book {
         Book book = (Book) object;
         boolean isTitleBook = Objects.equals(this.titleBook, book.titleBook);
         boolean isAuthor = Objects.equals(this.author, book.author);
-        boolean isYearPublication = Objects.equals(this.yearPublication, book.yearPublication);
+        boolean isYearPublication = this.yearPublication == book.yearPublication;
         return   isTitleBook && isAuthor && isYearPublication;
     }
 }
