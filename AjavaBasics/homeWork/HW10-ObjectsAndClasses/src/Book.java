@@ -32,4 +32,9 @@ public class Book {
     public void setYearPublication(int yearPublication) {
         this.yearPublication = yearPublication;
     }
+
+    @Override
+    public String toString() {
+        return "Название книги: " + getTitleBook() + "\nАвтор:" + getAuthor() + "\nГод публикации: " + getYearPublication() + "\n";
+    }
 }
