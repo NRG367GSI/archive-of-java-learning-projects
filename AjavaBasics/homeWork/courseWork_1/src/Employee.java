@@ -1,5 +1,5 @@
 public class Employee {
-    private String fullNameEmployee;
+    private final String fullNameEmployee;
     private Department department;
     private Double salary;
     private final int id;
@@ -16,9 +16,33 @@ public class Employee {
         this.id = count();
     }
 
+    public String getFullNameEmployee() {
+        return this.fullNameEmployee;
+    }
+
+    public Department getDepartment() {
+        return this.department;
+    }
+
+    public Double getSalary() {
+        return this.salary;
+    }
+
+    public int getId() {
+        return  this.id;
+    }
+
+    public void  setDepartment(Department department) {
+        this.department = department;
+    }
+
+    public void  setSalary(Double salary) {
+        this.salary = salary;
+    }
+
     @Override
     public String toString() {
-        return String.format("id: %d, %s, %s, %,.2f", id, fullNameEmployee, department.getDescription(), salary);
+        return String.format("id: %d, %s, %s, %,.2f", id, fullNameEmployee, department, salary);
     }
 
 

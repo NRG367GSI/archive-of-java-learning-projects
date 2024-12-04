@@ -15,10 +15,12 @@ public enum Department {
         return description;
     }
 
-    public static void id() {
-        for (Department department : Department.values()) {
-            System.out.println(department);
-
-        }
+    public String toString() {
+        return this.description;
     }
+
+//    public int getSequenceNumber() {
+//        return Department.
+//    }
+
 }
