@@ -1,8 +1,12 @@
+import java.util.Arrays;
+
 public class EmployeeBook {
     Employee[] book;
+    String outBook;
 
     public EmployeeBook() {
-        book = new Employee[10];
+        this.book = new Employee[10];
+        this.outBook = "";
     }
 
     public Employee getEmployee(int index) {
@@ -13,18 +17,30 @@ public class EmployeeBook {
         }
     }
 
-    public outEmployee() {
-        for (Employee employee : book) {
-            System.out.println(employee);
+
+
+    public String outEmployee() {
+        String out = "";
+        for (int i = 0; i < this.book.length; i++) {
+            if (this.book[i] != null) {
+                out += this.book[i].toString() + "\n";
+            }
         }
+        this.outBook = out;
+        return this.outBook;
+    }
+
+    public String toString() {
+        return Arrays.toString(this.book);
     }
 
     public void addEmployee(Employee employ) {
         for (int i = 0; i < this.book.length; i++) {
             if (this.book[i] == null) {
                 this.book[i] = employ;
-                break;
+                return;
             }
         }
+        System.out.println("Места для записи нет!");
     }
 }
