@@ -3,7 +3,8 @@ public enum Department {
     MARKETING("Отдел маркетинга"),
     FINANCE("Финансовый отдел"),
     CUSTOMER_SERVICE("Отдел обслуживания клиентов"),
-    LOGISTICS("Отдел логистики");
+    HR("Отдел кадров"),
+    IT("Отдел информационных технологий");
 
     private final String description;
 
@@ -19,8 +20,6 @@ public enum Department {
         return this.description;
     }
 
-//    public int getSequenceNumber() {
-//        return Department.
-//    }
+
 
 }
