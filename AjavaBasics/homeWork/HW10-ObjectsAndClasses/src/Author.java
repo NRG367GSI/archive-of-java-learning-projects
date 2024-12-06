@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Author {
     private String firstName;
     private String lastName;
@@ -21,5 +23,27 @@ public class Author {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(" %s %s  ", getFirstName(), getLastName());
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Author author = (Author) obj;
+        return Objects.equals(this.firstName, author.firstName) && Objects.equals(this.lastName, author.lastName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.firstName, this.lastName);
     }
 }
