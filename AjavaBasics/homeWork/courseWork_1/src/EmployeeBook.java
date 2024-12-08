@@ -51,6 +51,11 @@ public class EmployeeBook {
      * @param employ
      */
     public boolean addEmployee(Employee employ) {
+        for (Employee people : this.book) {
+            if (people != null && people.equals(employ)) {
+                return false;
+            }
+        }
         for (int i = 0; i < this.book.length; i++) {
             if (this.book[i] == null) {
                 this.book[i] = employ;

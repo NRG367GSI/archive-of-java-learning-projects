@@ -33,6 +33,7 @@ public class Main {
 
         EmployeeBook eb = new EmployeeBook();
         for (Employee emp : employees) {
+            System.out.println(emp);
             eb.addEmployee(emp);
         }
 
