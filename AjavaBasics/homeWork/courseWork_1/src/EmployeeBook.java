@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class EmployeeBook {
     private Employee[] book;
-    String outBook;
+    private String outBook;
 
     public EmployeeBook() {
         this.book = new Employee[10];
@@ -46,14 +46,25 @@ public class EmployeeBook {
      * Добавление сотрудника
      * @param employ
      */
-    public void addEmployee(Employee employ) {
+    public boolean addEmployee(Employee employ) {
         for (int i = 0; i < this.book.length; i++) {
             if (this.book[i] == null) {
                 this.book[i] = employ;
-                return;
+                return true;
             }
         }
-        System.out.println("Места для записи нет!");
+        return false;
+    }
+
+    public void removeEmployee(int id) {
+        if (id >= 1 && id <= this.book.length) {
+            for (int i = 0; i < this.book.length; i++) {
+                if (this.book[i].getId() == id) {
+                    this.book[i] = null;
+                    System.out.println("Удален сотрудник id:" + id);
+                }
+            }
+        }
     }
 
     /**
@@ -134,6 +145,41 @@ public class EmployeeBook {
         }
         this.outBook = out;
         return this.outBook;
+    }
+
+    /**
+     * Индексация зарплаты
+     * @param percent 0 - 100
+     */
+    public void salaryIndexation(int percent) {
+        Double percentageMultiplier = ((double) percent / 100);
+        for (Employee people : this.book) {
+            people.setSalary(percentageMultiplier * people.getSalary() + people.getSalary());
+        }
+    }
+
+    /**
+     * Вывод всех сотрудников с зп меньше числа
+     * @param salary int
+     */
+    public void lowSalaryEmployees(int salary) {
+        for (Employee people : this.book) {
+            if (people.getSalary() < (double) salary) {
+                System.out.printf("%d %s %,.2f\n", people.getId(), people.getFullNameEmployee(), people.getSalary());
+            }
+        }
+    }
+
+    /**
+     * Вывод всех сотрудников с зп больше или равно числу
+     * @param salary int
+     */
+    public void highSalaryEmployees(int salary) {
+        for (Employee people : this.book) {
+            if (people.getSalary() >= (double) salary) {
+                System.out.printf("%d %s %,.2f\n", people.getId(), people.getFullNameEmployee(), people.getSalary());
+            }
+        }
     }
 
 
