@@ -19,7 +19,4 @@ public enum Department {
     public String toString() {
         return this.description;
     }
-
-
-
 }

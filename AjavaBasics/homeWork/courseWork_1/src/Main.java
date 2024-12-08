@@ -2,8 +2,6 @@ public class Main {
     public static void main(String[] args) {
 
 
-
-
         Employee[] employees = new Employee[20];
         employees[0] = new Employee("Иванов Иван Иванович", Department.CUSTOMER_SERVICE, 50_000.00);
         employees[1] = new Employee("Смирнова Галина Петровна", Department.FINANCE, 60_000.00);
@@ -16,7 +14,7 @@ public class Main {
         employees[8] = new Employee("Федоров Федор Федорович", Department.IT, 72_000.00);
         employees[9] = new Employee("Лебедева Мария Александровна", Department.HR, 57_000.00);
 
-        //Это для эксперимента
+        //для эксперимента
 //        employees[10] = new Employee("Соколов Андрей Викторович", Department.SALE, 67_000.00);
 //        employees[11] = new Employee("Морозова Екатерина Владимировна", Department.MARKETING, 60_000.00);
 //        employees[12] = new Employee("Новиков Дмитрий Сергеевич", Department.CUSTOMER_SERVICE, 53_000.00);
@@ -48,7 +46,7 @@ public class Main {
         System.out.println('\n');
         System.out.printf("Минимальная зарплата составляет: %s", eb.getEmployeeSalaryMax());
         System.out.println('\n');
-        System.out.printf("Средняя зарплата составляет: %,.2f",eb.averageSalaryEmployees());
+        System.out.printf("Средняя зарплата составляет: %,.2f", eb.averageSalaryEmployees());
         System.out.println('\n');
         System.out.printf("Список всех сотрудников:\n%s", eb.outFulNameEmployee());
 
@@ -65,11 +63,20 @@ public class Main {
         //Вывод всех сотрудников с зп больше или равное числу
         System.out.println("Вывод всех сотрудников с зп больше или равное числу");
         eb.highSalaryEmployees(70_000);
+        System.out.println("\n");
 
+        //Удаление сотрудника по id
         System.out.println("Удаление сотрудника по id");
-        eb.removeEmployee(10);
+        eb.removeEmployee(5);
+        System.out.println(eb.outEmployee());
+        //добавление сотрудника в пустую ячейку
+        System.out.println("добавление сотрудника в пустую ячейку");
+        Employee emp = new Employee("Фролова Елена Викторовна", Department.FINANCE, 64_000.00);
+        eb.addEmployee(emp);
         System.out.println(eb.outEmployee());
 
-
+        //метод для получения сотрудника по id
+        System.out.println("метод для получения сотрудника по id");
+        System.out.println(eb.employeeBYid(7));
     }
 }

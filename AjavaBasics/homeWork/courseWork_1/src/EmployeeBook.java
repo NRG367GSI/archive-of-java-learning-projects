@@ -11,20 +11,23 @@ public class EmployeeBook {
 
     /**
      * Возвращает сотрудника по индексу
-     * @param index
+     *
+     * @param id
      * @return Employee
      */
-    public Employee getEmployee(int index) {
-        if (index >= 0 && index <= book.length - 1) {
-            return this.book[index];
-        } else {
-            return null;
+    public Employee employeeBYid(int id) {
+        for (Employee people : this.book) {
+            if (people.getId() == id) {
+                return people;
+            }
         }
+        return null;
     }
 
 
     /**
      * список всех сотрудников со всеми имеющимися по ним данными
+     *
      * @return
      */
     public String outEmployee() {
@@ -44,6 +47,7 @@ public class EmployeeBook {
 
     /**
      * Добавление сотрудника
+     *
      * @param employ
      */
     public boolean addEmployee(Employee employ) {
@@ -56,6 +60,11 @@ public class EmployeeBook {
         return false;
     }
 
+    /**
+     * Удаление сотрудника по id
+     *
+     * @param id
+     */
     public void removeEmployee(int id) {
         if (id >= 1 && id <= this.book.length) {
             for (int i = 0; i < this.book.length; i++) {
@@ -68,7 +77,6 @@ public class EmployeeBook {
     }
 
     /**
-     *
      * @return сумму затрат на ЗП в месяц Double
      */
     public Double getAmountExpensesMonth() {
@@ -84,6 +92,7 @@ public class EmployeeBook {
     /**
      * сотрудника с минимальной ЗП
      * EmployeeSalaryMin
+     *
      * @return тип Employee
      */
     public Employee getEmployeeSalaryMin() {
@@ -98,6 +107,7 @@ public class EmployeeBook {
 
     /**
      * сотрудника с максимальной ЗП
+     *
      * @return EmployeeSalaryMax
      */
     public Employee getEmployeeSalaryMax() {
@@ -112,6 +122,7 @@ public class EmployeeBook {
 
     /**
      * Возвращает количество сотрудников
+     *
      * @return int
      */
     public int countEmployee() {
@@ -126,6 +137,7 @@ public class EmployeeBook {
 
     /**
      * среднее значение зарплат
+     *
      * @return
      */
     public Double averageSalaryEmployees() {
@@ -133,7 +145,6 @@ public class EmployeeBook {
     }
 
     /**
-     *
      * @return Выводит имена всех сотрудников
      */
     public String outFulNameEmployee() {
@@ -149,6 +160,7 @@ public class EmployeeBook {
 
     /**
      * Индексация зарплаты
+     *
      * @param percent 0 - 100
      */
     public void salaryIndexation(int percent) {
@@ -160,6 +172,7 @@ public class EmployeeBook {
 
     /**
      * Вывод всех сотрудников с зп меньше числа
+     *
      * @param salary int
      */
     public void lowSalaryEmployees(int salary) {
@@ -172,6 +185,7 @@ public class EmployeeBook {
 
     /**
      * Вывод всех сотрудников с зп больше или равно числу
+     *
      * @param salary int
      */
     public void highSalaryEmployees(int salary) {
@@ -182,7 +196,7 @@ public class EmployeeBook {
         }
     }
 
-
+    //
 
 
 }

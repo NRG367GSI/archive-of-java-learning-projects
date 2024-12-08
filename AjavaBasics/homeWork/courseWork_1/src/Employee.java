@@ -7,8 +7,9 @@ public class Employee {
     private final int id;
 
     private static int count = 1;
+
     private static int count() {
-        return  count++;
+        return count++;
     }
 
     public Employee(String fullNameEmployee, Department department, Double salary) {
@@ -31,14 +32,14 @@ public class Employee {
     }
 
     public int getId() {
-        return  this.id;
+        return this.id;
     }
 
-    public void  setDepartment(Department department) {
+    public void setDepartment(Department department) {
         this.department = department;
     }
 
-    public void  setSalary(Double salary) {
+    public void setSalary(Double salary) {
         this.salary = salary;
     }
 
@@ -57,7 +58,7 @@ public class Employee {
         Boolean isSalary = Objects.equals(this.salary, employee.salary);
         Boolean isID = Objects.equals(this.id, employee.id);
 
-        return  isFullNameEmployee && isDepartment && isSalary && isID;
+        return isFullNameEmployee && isDepartment && isSalary && isID;
     }
 
     @Override
@@ -69,8 +70,6 @@ public class Employee {
     public String toString() {
         return String.format("id: %d, %s, %s, %,.2f", id, fullNameEmployee, department, salary);
     }
-
-
 
 
 }
