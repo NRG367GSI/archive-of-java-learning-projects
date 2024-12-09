@@ -3,7 +3,7 @@ import java.util.Objects;
 public class Employee {
     private final String fullName;
     private Department department;
-    private Double salary;
+    private double salary;
     private final int id;
 
     private static int count = 1;
