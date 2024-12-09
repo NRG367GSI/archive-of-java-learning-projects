@@ -165,9 +165,18 @@ public class EmployeeBook {
      * @param percent 0 - 100
      */
     public void salaryIndexation(int percent) {
-        Double percentageMultiplier = ((double) percent / 100);
-        for (Employee people : this.book) {
-            people.setSalary(percentageMultiplier * people.getSalary() + people.getSalary());
+        if (percent < 0) {
+            throw new IllegalArgumentException("Процент не может быть отрицательным");
+        }
+
+        final double indexationRate = percent / 100.0;
+
+        if (indexationRate != 0) {
+            for (Employee people : this.book) {
+                if (people != null && people.getSalary() != null) {
+                    people.setSalary(people.getSalary() * (1 + indexationRate));
+                }
+            }
         }
     }
 
