@@ -31,7 +31,7 @@ public class Main {
         System.out.println(ordinal);
 
 
-        EmployeeBook eb = new EmployeeBook();
+        EmployeeBook eb = new EmployeeBook(10);
         for (Employee emp : employees) {
             System.out.println(emp);
             eb.addEmployee(emp);

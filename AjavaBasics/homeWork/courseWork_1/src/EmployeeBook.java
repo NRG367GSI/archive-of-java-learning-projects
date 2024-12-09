@@ -3,8 +3,8 @@ import java.util.Arrays;
 public class EmployeeBook {
     private Employee[] book;
 
-    public EmployeeBook() {
-        this.book = new Employee[10];
+    public EmployeeBook(int size) {
+        this.book = new Employee[size];
     }
 
     /**
