@@ -48,16 +48,17 @@ public class EmployeeBook {
      * @param employ
      */
     public boolean addEmployee(Employee employ) {
-        for (Employee people : this.book) {
-            if (people != null && people.equals(employ)) {
+        int index = -1;
+        for (int i = 0; i < this.book.length; i++) {
+            if (this.book[i] != null && this.book[i].equals(employ)) {
                 return false;
+            } if (this.book[i] == null && index == -1) {
+                index = i;
             }
         }
-        for (int i = 0; i < this.book.length; i++) {
-            if (this.book[i] == null) {
-                this.book[i] = employ;
-                return true;
-            }
+        if (index != - 1) {
+            this.book[index] = employ;
+            return true;
         }
         return false;
     }
@@ -69,13 +70,15 @@ public class EmployeeBook {
      */
     public void removeEmployee(int id) {
         if (id >= 1 && id <= this.book.length) {
-            for (int i = 0; i < this.book.length; i++) {
-                if (this.book[i].getId() == id) {
-                    this.book[i] = null;
-                    System.out.println("Удален сотрудник id:" + id);
-                }
+            return;
+        }
+        for (int i = 0; i < this.book.length; i++) {
+            if (this.book[i].getId() == id) {
+                this.book[i] = null;
+                System.out.println("Удален сотрудник id:" + id);
             }
         }
+
     }
 
     /**
