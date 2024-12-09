@@ -98,13 +98,13 @@ public class EmployeeBook {
      * @return тип Employee
      */
     public Employee getEmployeeSalaryMin() {
-        Employee EmployeeSalaryMin = this.book[0];
+        Employee employeeSalaryMin = this.book[0];
         for (int i = 0; i < this.book.length; i++) {
-            if (this.book[i] != null && this.book[i].getSalary() != 0 && this.book[i].getSalary() < EmployeeSalaryMin.getSalary()) {
-                EmployeeSalaryMin = this.book[i];
+            if (this.book[i] != null && this.book[i].getSalary() != 0 && this.book[i].getSalary() < employeeSalaryMin.getSalary()) {
+                employeeSalaryMin = this.book[i];
             }
         }
-        return EmployeeSalaryMin;
+        return employeeSalaryMin;
     }
 
     /**
@@ -113,13 +113,13 @@ public class EmployeeBook {
      * @return EmployeeSalaryMax
      */
     public Employee getEmployeeSalaryMax() {
-        Employee EmployeeSalaryMax = this.book[0];
+        Employee employeeSalaryMax = this.book[0];
         for (int i = 0; i < this.book.length; i++) {
-            if (this.book[i] != null && this.book[i].getSalary() != 0 && this.book[i].getSalary() > EmployeeSalaryMax.getSalary()) {
-                EmployeeSalaryMax = this.book[i];
+            if (this.book[i] != null && this.book[i].getSalary() != 0 && this.book[i].getSalary() > employeeSalaryMax.getSalary()) {
+                employeeSalaryMax = this.book[i];
             }
         }
-        return EmployeeSalaryMax;
+        return employeeSalaryMax;
     }
 
     /**
