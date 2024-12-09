@@ -156,7 +156,7 @@ public class EmployeeBook {
         String out = "";
         for (int i = 0; i < this.book.length; i++) {
             if (this.book[i] != null) {
-                out = out.concat(this.book[i].getFullNameEmployee() + "\n");
+                out = out.concat(this.book[i].getFullName() + "\n");
             }
         }
         this.outBook = out;
@@ -183,7 +183,7 @@ public class EmployeeBook {
     public void lowSalaryEmployees(int salary) {
         for (Employee people : this.book) {
             if (people.getSalary() < (double) salary) {
-                System.out.printf("%d %s %,.2f\n", people.getId(), people.getFullNameEmployee(), people.getSalary());
+                System.out.printf("%d %s %,.2f\n", people.getId(), people.getFullName(), people.getSalary());
             }
         }
     }
@@ -196,7 +196,7 @@ public class EmployeeBook {
     public void highSalaryEmployees(int salary) {
         for (Employee people : this.book) {
             if (people.getSalary() >= (double) salary) {
-                System.out.printf("%d %s %,.2f\n", people.getId(), people.getFullNameEmployee(), people.getSalary());
+                System.out.printf("%d %s %,.2f\n", people.getId(), people.getFullName(), people.getSalary());
             }
         }
     }

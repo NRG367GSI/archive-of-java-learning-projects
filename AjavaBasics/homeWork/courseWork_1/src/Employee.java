@@ -1,15 +1,15 @@
 import java.util.Objects;
 
 public class Employee {
-    private final String fullNameEmployee;
+    private final String fullName;
     private Department department;
     private Double salary;
     private final int id;
 
     private static int count = 1;
 
-    public Employee(String fullNameEmployee, Department department, Double salary) {
-        this.fullNameEmployee = fullNameEmployee;
+    public Employee(String fullName, Department department, Double salary) {
+        this.fullName = fullName;
         this.department = department;
         this.salary = salary;
         this.id = count();
@@ -19,8 +19,8 @@ public class Employee {
         return count++;
     }
 
-    public String getFullNameEmployee() {
-        return this.fullNameEmployee;
+    public String getFullName() {
+        return this.fullName;
     }
 
     public Department getDepartment() {
@@ -53,7 +53,7 @@ public class Employee {
         }
         Employee employee = (Employee) O;
 
-        Boolean isFullNameEmployee = Objects.equals(this.fullNameEmployee, employee.fullNameEmployee);
+        Boolean isFullNameEmployee = Objects.equals(this.fullName, employee.fullName);
         Boolean isDepartment = Objects.equals(this.department, employee.department);
         Boolean isSalary = Objects.equals(this.salary, employee.salary);
         Boolean isID = Objects.equals(this.id, employee.id);
@@ -63,12 +63,12 @@ public class Employee {
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.id, this.fullNameEmployee, this.department, this.salary);
+        return Objects.hash(this.id, this.fullName, this.department, this.salary);
     }
 
     @Override
     public String toString() {
-        return String.format("id: %d, %s, %s, %,.2f", id, fullNameEmployee, department, salary);
+        return String.format("id: %d, %s, %s, %,.2f", id, fullName, department, salary);
     }
 
 
