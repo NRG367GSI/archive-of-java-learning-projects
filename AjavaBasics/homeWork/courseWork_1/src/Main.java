@@ -38,7 +38,8 @@ public class Main {
         }
 
         //список всех сотрудников со всеми имеющимися по ним данными
-        System.out.println(eb.outEmployee());
+        eb.outEmployee();
+        System.out.println(eb.toString());
 
         //Месячная сумма затрат
         System.out.printf("Месячная сумма затрат составляет: %,.2f", eb.getAmountExpensesMonth());
@@ -55,7 +56,7 @@ public class Main {
         System.out.println("\n");
         System.out.println("Индексация зарплаты");
         eb.salaryIndexation(20);
-        System.out.println(eb.outEmployee());
+        eb.outEmployee();
 
         //Вывод всех сотрудников с зп меньше числа
         System.out.println("Вывод всех сотрудников с зп меньше числа");
@@ -69,12 +70,12 @@ public class Main {
         //Удаление сотрудника по id
         System.out.println("Удаление сотрудника по id");
         eb.removeEmployee(5);
-        System.out.println(eb.outEmployee());
+        eb.outEmployee();
         //добавление сотрудника в пустую ячейку
         System.out.println("добавление сотрудника в пустую ячейку");
         Employee emp = new Employee("Фролова Елена Викторовна", Department.FINANCE, 64_000.00);
         eb.addEmployee(emp);
-        System.out.println(eb.outEmployee());
+        eb.outEmployee();
 
         //метод для получения сотрудника по id
         System.out.println("метод для получения сотрудника по id");

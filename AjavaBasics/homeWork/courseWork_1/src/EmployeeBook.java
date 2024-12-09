@@ -28,14 +28,24 @@ public class EmployeeBook {
      *
      * @return
      */
-    public String outEmployee() {
+    public String toString() {
         StringBuilder sb = new StringBuilder();
         for (Employee employee : this.book) {
             if (employee != null) {
                 sb.append(employee.toString()).append("\n"); //out += this.book[i].toString() + "\n";
+            } else {
+                sb.append("null").append("\n");
             }
         }
         return sb.toString();
+    }
+
+    public void outEmployee() {
+        for (Employee people : this.book) {
+            if (people != null) {
+                System.out.println(people.toString());
+            }
+        }
     }
 
     /**
