@@ -2,11 +2,9 @@ import java.util.Arrays;
 
 public class EmployeeBook {
     private Employee[] book;
-    private String outBook;
 
     public EmployeeBook() {
         this.book = new Employee[10];
-        this.outBook = "";
     }
 
     /**
@@ -37,8 +35,7 @@ public class EmployeeBook {
                 out = out.concat(this.book[i].toString() + "\n"); //out += this.book[i].toString() + "\n";
             }
         }
-        this.outBook = out;
-        return this.outBook;
+        return out;
     }
 
     public String toString() {
@@ -159,8 +156,7 @@ public class EmployeeBook {
                 out = out.concat(this.book[i].getFullName() + "\n");
             }
         }
-        this.outBook = out;
-        return this.outBook;
+        return out;
     }
 
     /**
