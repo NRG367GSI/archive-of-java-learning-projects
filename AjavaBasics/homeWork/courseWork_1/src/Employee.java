@@ -12,10 +12,10 @@ public class Employee {
         this.fullName = fullName;
         this.department = department;
         this.salary = salary;
-        this.id = count();
+        this.id = incrementCount();
     }
 
-    private static int count() {
+    private static int incrementCount() {
         return count++;
     }
 
