@@ -8,15 +8,15 @@ public class Employee {
 
     private static int count = 1;
 
-    private static int count() {
-        return count++;
-    }
-
     public Employee(String fullNameEmployee, Department department, Double salary) {
         this.fullNameEmployee = fullNameEmployee;
         this.department = department;
         this.salary = salary;
         this.id = count();
+    }
+
+    private static int count() {
+        return count++;
     }
 
     public String getFullNameEmployee() {
