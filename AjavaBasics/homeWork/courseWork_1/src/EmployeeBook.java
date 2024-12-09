@@ -187,7 +187,7 @@ public class EmployeeBook {
      */
     public void lowSalaryEmployees(int salary) {
         for (Employee people : this.book) {
-            if (people.getSalary() < (double) salary) {
+            if (people != null && people.getSalary() != null && people.getSalary() < (double) salary) {
                 System.out.printf("%d %s %,.2f\n", people.getId(), people.getFullName(), people.getSalary());
             }
         }
@@ -200,14 +200,10 @@ public class EmployeeBook {
      */
     public void highSalaryEmployees(int salary) {
         for (Employee people : this.book) {
-            if (people.getSalary() >= (double) salary) {
+            if (people != null && people.getSalary() != null && people.getSalary() >= (double) salary) {
                 System.out.printf("%d %s %,.2f\n", people.getId(), people.getFullName(), people.getSalary());
             }
         }
     }
-
-    //
-
-
 }
 
