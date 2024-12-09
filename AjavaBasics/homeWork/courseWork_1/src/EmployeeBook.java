@@ -29,17 +29,13 @@ public class EmployeeBook {
      * @return
      */
     public String outEmployee() {
-        String out = "";
-        for (int i = 0; i < this.book.length; i++) {
-            if (this.book[i] != null) {
-                out = out.concat(this.book[i].toString() + "\n"); //out += this.book[i].toString() + "\n";
+        StringBuilder sb = new StringBuilder();
+        for (Employee employee : this.book) {
+            if (employee != null) {
+                sb.append(employee.toString()).append("\n"); //out += this.book[i].toString() + "\n";
             }
         }
-        return out;
-    }
-
-    public String toString() {
-        return Arrays.toString(this.book);
+        return sb.toString();
     }
 
     /**
