@@ -6,7 +6,7 @@ public enum Department {
     HR("Отдел кадров"),
     IT("Отдел информационных технологий");
 
-    private final String description;
+    public final String description;
 
     Department(String description) {
         this.description = description;

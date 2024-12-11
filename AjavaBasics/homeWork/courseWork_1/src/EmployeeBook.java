@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Objects;
 
 public class EmployeeBook {
     private Employee[] book;
@@ -11,11 +12,11 @@ public class EmployeeBook {
      * Возвращает сотрудника по индексу
      *
      * @param id
-     * @return Employee
+     * @return book[id]
      */
     public Employee employeeBYid(int id) {
         for (Employee people : this.book) {
-            if (people.getId() == id) {
+            if (people != null && people.getId() == id) {
                 return people;
             }
         }
@@ -24,18 +25,14 @@ public class EmployeeBook {
 
 
     /**
-     * список всех сотрудников со всеми имеющимися по ним данными
+     * списак всех сотрудников со всеми имеющимися по ним данными
      *
-     * @return
+     * @return Array.toString
      */
     public String toString() {
         StringBuilder sb = new StringBuilder();
         for (Employee employee : this.book) {
-            if (employee != null) {
-                sb.append(employee.toString()).append("\n"); //out += this.book[i].toString() + "\n";
-            } else {
-                sb.append("null").append("\n");
-            }
+            sb.append(Objects.requireNonNull(employee, "null")).append("\n");
         }
         return sb.toString();
     }
@@ -43,7 +40,7 @@ public class EmployeeBook {
     public void outEmployee() {
         for (Employee people : this.book) {
             if (people != null) {
-                System.out.println(people.toString());
+                System.out.println(people);
             }
         }
     }
@@ -79,7 +76,7 @@ public class EmployeeBook {
             return;
         }
         for (int i = 0; i < this.book.length; i++) {
-            if (this.book[i].getId() == id) {
+            if (this.book[i] != null && this.book[i].getId() == id) {
                 this.book[i] = null;
                 System.out.println("Удален сотрудник id:" + id);
             }
@@ -90,8 +87,8 @@ public class EmployeeBook {
     /**
      * @return сумму затрат на ЗП в месяц Double
      */
-    public Double getAmountExpensesMonth() {
-        Double sum = 0d;
+    public double getAmountExpensesMonth() {
+        double sum = 0d;
         for (int i = 0; i < this.book.length; i++) {
             if (this.book[i] != null) {
                 sum += this.book[i].getSalary();
@@ -108,13 +105,20 @@ public class EmployeeBook {
      */
     public Employee getEmployeeSalaryMin() {
         Employee employeeSalaryMin = null;
-        double minSalary = Double.MAX_VALUE;
-        for (int i = 0; i < this.book.length; i++) {
-            if (this.book[i] != null && this.book[i].getSalary() != 0 && this.book[i].getSalary() < minSalary) {
-                employeeSalaryMin = this.book[i];
-                minSalary = this.book[i].getSalary();
+        double minSalary = 0; // Инициализируем значением по умолчанию
+        boolean found = false; // Флаг для отслеживания, найдена ли хотя бы одна зарплата
+
+        for (Employee employee : this.book) {
+            if (employee != null) {
+                double salary = employee.getSalary();
+                if (!found || salary < minSalary) {
+                    employeeSalaryMin = employee;
+                    minSalary = salary;
+                    found = true; // Устанавливаем флаг, что хотя бы одна зарплата найдена
+                }
             }
         }
+
         return employeeSalaryMin;
     }
 
@@ -186,7 +190,7 @@ public class EmployeeBook {
 
         if (indexationRate != 0) {
             for (Employee people : this.book) {
-                if (people != null && people.getSalary() != null) {
+                if (people != null && people.getSalary() != 0) {
                     people.setSalary(people.getSalary() * (1 + indexationRate));
                 }
             }
@@ -200,7 +204,7 @@ public class EmployeeBook {
      */
     public void lowSalaryEmployees(int salary) {
         for (Employee people : this.book) {
-            if (people != null && people.getSalary() != null && people.getSalary() < (double) salary) {
+            if (people != null && people.getSalary() != 0 && people.getSalary() < (double) salary) {
                 System.out.printf("%d %s %,.2f\n", people.getId(), people.getFullName(), people.getSalary());
             }
         }
@@ -213,7 +217,7 @@ public class EmployeeBook {
      */
     public void highSalaryEmployees(int salary) {
         for (Employee people : this.book) {
-            if (people != null && people.getSalary() != null && people.getSalary() >= (double) salary) {
+            if (people != null && people.getSalary() != 0 && people.getSalary() >= (double) salary) {
                 System.out.printf("%d %s %,.2f\n", people.getId(), people.getFullName(), people.getSalary());
             }
         }

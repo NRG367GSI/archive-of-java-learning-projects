@@ -27,7 +27,7 @@ public class Employee {
         return this.department;
     }
 
-    public Double getSalary() {
+    public double getSalary() {
         return this.salary;
     }
 
