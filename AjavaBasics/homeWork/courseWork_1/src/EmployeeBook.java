@@ -105,20 +105,11 @@ public class EmployeeBook {
      */
     public Employee getEmployeeSalaryMin() {
         Employee employeeSalaryMin = null;
-        double minSalary = 0; // Инициализируем значением по умолчанию
-        boolean found = false; // Флаг для отслеживания, найдена ли хотя бы одна зарплата
-
         for (Employee employee : this.book) {
-            if (employee != null) {
-                double salary = employee.getSalary();
-                if (!found || salary < minSalary) {
-                    employeeSalaryMin = employee;
-                    minSalary = salary;
-                    found = true; // Устанавливаем флаг, что хотя бы одна зарплата найдена
-                }
+            if (employee != null && (employeeSalaryMin == null || employee.getSalary() < employeeSalaryMin.getSalary())) {
+                employeeSalaryMin = employee;
             }
         }
-
         return employeeSalaryMin;
     }
 
