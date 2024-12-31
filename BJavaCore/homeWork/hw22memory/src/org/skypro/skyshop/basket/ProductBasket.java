@@ -29,6 +29,24 @@ public class ProductBasket {
         return cost;
     }
 
+    public void printBasket() {
+        boolean isEmpty = false;
+        int cost = 0;
+        for (Product pd : this.basket) {
+            if (pd != null) {
+                isEmpty = true;
+                System.out.println(pd);
+                cost += pd.getPriceProduct();
+            }
+        }
+        if (isEmpty) {
+            System.out.println("Итого: " + cost);
+        } else {
+            System.out.println("Корзина пуста!");
+        }
+
+    }
+
 
 
 }
