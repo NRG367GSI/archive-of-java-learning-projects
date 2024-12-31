@@ -14,6 +14,7 @@ public class Main {
         employees[8] = new Employee("Федоров Федор Федорович", Department.IT, 72_000.00);
         employees[9] = new Employee("Лебедева Мария Александровна", Department.HR, 57_000.00);
 
+
         //для эксперимента
 //        employees[10] = new Employee("Соколов Андрей Викторович", Department.SALE, 67_000.00);
 //        employees[11] = new Employee("Морозова Екатерина Владимировна", Department.MARKETING, 60_000.00);
@@ -27,8 +28,11 @@ public class Main {
 //        employees[19] = new Employee("Фролова Елена Викторовна", Department.FINANCE, 64_000.00);
 
 
-        int ordinal = Department.CUSTOMER_SERVICE.ordinal() + 1;
+        int ordinal = Department.CUSTOMER_SERVICE
+                                .ordinal() + 1;
         System.out.println(ordinal);
+
+
 
 
         EmployeeBook eb = new EmployeeBook(10);
