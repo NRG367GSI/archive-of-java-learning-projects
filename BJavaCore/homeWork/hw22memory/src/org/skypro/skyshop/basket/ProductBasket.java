@@ -44,7 +44,16 @@ public class ProductBasket {
         } else {
             System.out.println("Корзина пуста!");
         }
+    }
 
+    public boolean isProduct(String nameProduct) {
+        boolean isProduct = false;
+        for (Product pd : this.basket) {
+            if (pd != null && pd.getProductName().equals(nameProduct)) {
+                isProduct = true;
+            }
+        }
+        return isProduct;
     }
 
 
