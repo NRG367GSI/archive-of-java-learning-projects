@@ -42,5 +42,19 @@ public class App {
         System.out.println("Проверка продукта в корзине по имени");
         System.out.println(basket.isProduct("Strawberry"));
 
+        //Очистка корзины.
+        System.out.println("Очистка корзины");
+        basket.removeBasket();
+
+        //Печать содержимого пустой корзины.
+        basket.printBasket();
+
+        //Получение стоимости пустой корзины.
+        System.out.println("Получение стоимости пустой корзины.");
+        System.out.println(basket.totalCost());
+
+        //Поиск товара по имени в пустой корзине.
+        System.out.println("Поиск товара по имени в пустой корзине.");
+        System.out.println(basket.isProduct("Strawberry"));
     }
 }
