@@ -21,5 +21,9 @@ public class App {
         basket.addProduct(orange);
         basket.addProduct(mango);
         basket.addProduct(pineapple);
+
+        //Добавление продукта в заполненную корзину, в которой нет свободного места.
+        basket.addProduct(watermelon);
+        basket.addProduct(kiwi);
     }
 }
