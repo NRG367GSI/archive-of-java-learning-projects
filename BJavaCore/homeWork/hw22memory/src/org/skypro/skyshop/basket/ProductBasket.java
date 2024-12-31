@@ -56,6 +56,9 @@ public class ProductBasket {
         return isProduct;
     }
 
-
-
+    public void removeBasket() {
+        for (int i = 0; i < this.basket.length; i ++) {
+            this.basket[i] = null;
+        }
+    }
 }
