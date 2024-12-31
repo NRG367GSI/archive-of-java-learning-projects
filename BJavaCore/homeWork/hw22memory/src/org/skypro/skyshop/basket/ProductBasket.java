@@ -9,4 +9,16 @@ public class ProductBasket {
         this.basket = new Product[size];
     }
 
+    public void addProduct(Product product) {
+        for (int i = 0; i < this.basket.length; i++) {
+            if (this.basket[i] == null) {
+                this.basket[i] = product;
+                return;
+            }
+        }
+        System.out.println("Не возможно добавить продукт!");
+    }
+
+
+
 }
