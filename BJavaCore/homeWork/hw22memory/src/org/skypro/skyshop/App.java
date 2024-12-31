@@ -38,5 +38,9 @@ public class App {
         System.out.println("Проверка продукта в корзине по имени");
         System.out.println(basket.isProduct("Apple"));
 
+        //Поиск товара, которого нет в корзине.
+        System.out.println("Проверка продукта в корзине по имени");
+        System.out.println(basket.isProduct("Strawberry"));
+
     }
 }
