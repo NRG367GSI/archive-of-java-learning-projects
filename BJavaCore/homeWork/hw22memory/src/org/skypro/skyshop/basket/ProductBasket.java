@@ -19,6 +19,16 @@ public class ProductBasket {
         System.out.println("Не возможно добавить продукт!");
     }
 
+    public int totalCost() {
+        int cost = 0;
+        for (Product pd : this.basket) {
+            if (pd != null) {
+                cost += pd.getPriceProduct();
+            }
+        }
+        return cost;
+    }
+
 
 
 }

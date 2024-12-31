@@ -10,4 +10,12 @@ public class Product {
         this.productName = productName;
         this.priceProduct = priceProduct;
     }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public int getPriceProduct() {
+        return priceProduct;
+    }
 }
