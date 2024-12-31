@@ -29,5 +29,9 @@ public class App {
         //Печать содержимого корзины с несколькими товарами.
         System.out.println("Содержимое корзины:");
         basket.printBasket();
+
+        //Получение стоимости корзины с несколькими товарами.
+        System.out.println("Вывод общей стоймости");
+        System.out.println(basket.totalCost());
     }
 }
