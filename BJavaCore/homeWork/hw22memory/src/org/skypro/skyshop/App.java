@@ -33,5 +33,10 @@ public class App {
         //Получение стоимости корзины с несколькими товарами.
         System.out.println("Вывод общей стоймости");
         System.out.println(basket.totalCost());
+
+        //Поиск товара, который есть в корзине.
+        System.out.println("Проверка продукта в корзине по имени");
+        System.out.println(basket.isProduct("Apple"));
+
     }
 }
