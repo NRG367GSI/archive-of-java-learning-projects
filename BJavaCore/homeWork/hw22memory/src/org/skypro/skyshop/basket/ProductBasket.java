@@ -2,6 +2,7 @@ package org.skypro.skyshop.basket;
 
 import org.skypro.skyshop.product.Product;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 public class ProductBasket {
@@ -48,7 +49,7 @@ public class ProductBasket {
         }
     }
 
-    public boolean isProduct(String nameProduct) {
+    public boolean checkProductExist(String nameProduct) {
         for (Product pd : this.basket) {
             if (pd != null && Objects.equals(pd.getProductName(), nameProduct)) {
                 return true;
@@ -57,9 +58,7 @@ public class ProductBasket {
         return false;
     }
 
-    public void removeBasket() {
-        for (int i = 0; i < this.basket.length; i ++) {
-            this.basket[i] = null;
-        }
+    public void clearBasket() {
+        Arrays.fill(this.basket, null);
     }
 }
