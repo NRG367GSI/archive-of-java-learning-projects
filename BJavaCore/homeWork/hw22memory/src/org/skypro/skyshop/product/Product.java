@@ -1,28 +1,21 @@
 package org.skypro.skyshop.product;
 
-import java.util.Objects;
 
-public class Product {
-    private final String productName;
-    private final int priceProduct;
+public abstract class Product {
+    protected final String productName;
 
-    public Product(String productName, int priceProduct) {
+    public Product(String productName) {
         this.productName = productName;
-        this.priceProduct = priceProduct;
     }
 
     public String getProductName() {
         return productName;
     }
 
-    public int getPriceProduct() {
-        return priceProduct;
-    }
+    public abstract int getPriceProduct();
 
     @Override
-    public String toString() {
-        return productName + " : " + priceProduct;
-    }
+    public abstract String toString();
 
 
 
