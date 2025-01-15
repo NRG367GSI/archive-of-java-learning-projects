@@ -13,11 +13,4 @@ public abstract class Product {
     }
 
     public abstract int getPriceProduct();
-
-    @Override
-    public abstract String toString();
-
-
-
-
 }
