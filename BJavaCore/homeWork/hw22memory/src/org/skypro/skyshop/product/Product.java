@@ -13,4 +13,8 @@ public abstract class Product {
     }
 
     public abstract int getPriceProduct();
+
+    //Метод isSpecial, возвращает true если товар специальный и false, если товар обычный
+    //Специальный товар — это товар со скидкой или фиксированной стоимостью
+    public abstract boolean isSpecial();
 }

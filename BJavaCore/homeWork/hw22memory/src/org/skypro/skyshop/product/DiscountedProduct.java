@@ -17,6 +17,11 @@ public class DiscountedProduct extends Product {
 
     @Override
     public String toString() {
-        return productName + " : " + basePrice + " : " + discount + "%";
+        return productName + " : " + basePrice + " (" + discount + "%)";
+    }
+
+    @Override
+    public boolean isSpecial() {
+        return true;
     }
 }

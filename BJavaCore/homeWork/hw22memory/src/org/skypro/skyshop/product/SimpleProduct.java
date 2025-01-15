@@ -17,4 +17,9 @@ public class SimpleProduct extends Product{
     public String toString() {
         return productName + " : " + priceProduct;
     }
+
+    @Override
+    public boolean isSpecial() {
+        return false;
+    }
 }
