@@ -15,11 +15,6 @@ public class SimpleProduct extends Product{
 
     @Override
     public String toString() {
-        return "DiscountedProduct{" +
-                "priceProduct=" + priceProduct +
-                ", productName='" + productName + '\'' +
-                '}';
+        return productName + " : " + priceProduct;
     }
-
-
 }

@@ -15,9 +15,6 @@ public class FixPriceProduct extends Product{
 
     @Override
     public String toString() {
-        return "FixPriceProduct{" +
-                "FixPriceProduct='" + getPriceProduct() +
-                "productName='" + productName + '\'' +
-                '}';
+        return productName + " : " + PRICE_PRODUCT;
     }
 }

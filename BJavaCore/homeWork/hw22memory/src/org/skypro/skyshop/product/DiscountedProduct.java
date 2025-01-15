@@ -17,12 +17,6 @@ public class DiscountedProduct extends Product {
 
     @Override
     public String toString() {
-        return "DiscountedProduct{" +
-                "basePrice=" + basePrice +
-                ", discount=" + discount +
-                ", productName='" + productName + '\'' +
-                '}';
+        return productName + " : " + basePrice + " : " + discount + "%";
     }
-
-
 }
