@@ -9,6 +9,8 @@ import org.skypro.skyshop.product.FixPriceProduct;
 import org.skypro.skyshop.product.Product;
 import org.skypro.skyshop.product.SimpleProduct;
 
+import java.util.Arrays;
+
 public class App {
     public static void main(String[] args) {
 
@@ -69,6 +71,7 @@ public class App {
         System.out.println("Создайте один объект типа SearchEngine");
         SearchEngine se = new SearchEngine(5);
 
+
         // Создаем статьи с описаниями товаров
         Article article1 = new Article(
                 "Яблоки",
@@ -101,6 +104,8 @@ public class App {
         se.addSearchable(article3);
         se.addSearchable(article4);
         se.addSearchable(article5);
+
+        se.printSearchable();
 
         // Ищем и выводим результаты
         System.out.println("Результаты поиска по запросу 'яблоки':");

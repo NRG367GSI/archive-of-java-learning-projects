@@ -31,4 +31,12 @@ public class SearchEngine {
         }
         System.out.println("Невозможно добавить объект: массив заполнен!");
     }
+
+    public void printSearchable() {
+        for (Searchable sc : searchables) {
+            if (sc != null) {
+                System.out.println(sc);
+            }
+        }
+    }
 }
