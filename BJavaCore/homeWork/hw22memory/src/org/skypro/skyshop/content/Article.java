@@ -2,15 +2,15 @@ package org.skypro.skyshop.content;
 
 public final class Article {
     private final String title;
-    private final String text;
+    private final String content;
 
     public Article(String title, String text) {
         this.title = title;
-        this.text = text;
+        this.content = text;
     }
 
     @Override
     public String toString() {
-        return String.format("%s\n%s", title, text);
+        return String.format("%s\n%s", title, content);
     }
 }
