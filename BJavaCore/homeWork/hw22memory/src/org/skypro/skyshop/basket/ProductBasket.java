@@ -33,10 +33,14 @@ public class ProductBasket {
     }
 
     public void printBasket() {
+        int specialCount = 0;
         boolean isEmpty = false;
         int cost = 0;
         for (Product pd : this.basket) {
             if (pd != null) {
+                if (pd.isSpecial()) {
+                    specialCount ++;
+                }
                 isEmpty = true;
                 System.out.println(pd);
                 cost += pd.getPriceProduct();
@@ -44,8 +48,9 @@ public class ProductBasket {
         }
         if (isEmpty) {
             System.out.println("Итого: " + cost);
+            System.out.println("Специальных товаров: " + specialCount + "\n");
         } else {
-            System.out.println("Корзина пуста!");
+            System.out.println("Корзина пуста!\n");
         }
     }
 
