@@ -23,8 +23,4 @@ public final class Article implements Searchable{
     public String getContentType() {
         return "ARTICLE";
     }
-
-    public String getTitle() {
-        return title;
-    }
 }
