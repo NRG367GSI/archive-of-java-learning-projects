@@ -112,7 +112,7 @@ public class App {
         Searchable[] appleResults = se.search("яблоки");
         for (Searchable result : appleResults) {
             if (result != null) { // Проверка на null
-                System.out.println(result.getTitle());
+                System.out.println(result.getSearchTerm());
             }
         }
 
@@ -130,8 +130,6 @@ public class App {
             if (result != null) { // Проверка на null
                 System.out.println(result.getStringRepresentation());
             }
-
-
         }
     }
 }

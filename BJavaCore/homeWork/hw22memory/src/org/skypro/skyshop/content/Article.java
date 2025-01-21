@@ -24,7 +24,6 @@ public final class Article implements Searchable{
         return "ARTICLE";
     }
 
-    @Override
     public String getTitle() {
         return title;
     }
