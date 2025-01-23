@@ -130,5 +130,37 @@ public class App {
                 System.out.println(result.getStringRepresentation());
             }
         }
+
+        System.out.println("\nДемонстрация проверки данных в классе:\n");
+        //Создайте несколько продуктов и нарочно заполните их поля неправильно
+        try {
+            Product nullProduct = new SimpleProduct("", 10);
+        } catch (IllegalArgumentException e) {
+            System.out.printf("%s\n%s\n%s", e.getMessage(), e.getCause(), Arrays.toString(e.getStackTrace()));
+        }
+        System.out.println("\n");
+
+        try {
+            Product isBlankProduct = new SimpleProduct("     ", 20);
+        } catch (IllegalArgumentException e) {
+            System.out.printf("%s\n%s\n%s", e.getMessage(), e.getCause(), Arrays.toString(e.getStackTrace()));
+        }
+        System.out.println("\n");
+        try {
+            Product zeroProductPrice = new SimpleProduct("zeroProductPrice", 0);
+        } catch (IllegalArgumentException e) {
+            System.out.printf("%s\n%s\n%s", e.getMessage(), e.getCause(), Arrays.toString(e.getStackTrace()));
+        }
+        System.out.println("\n");
+        try {
+            Product discountSubZero = new DiscountedProduct("discountSubZero", 10, -10);
+        } catch (IllegalArgumentException e)  {
+            System.out.printf("%s\n%s\n%s", e.getMessage(), e.getCause(), Arrays.toString(e.getStackTrace()));
+        }
+
+
+
+
+
     }
 }
