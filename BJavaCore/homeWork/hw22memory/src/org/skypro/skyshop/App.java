@@ -1,10 +1,15 @@
 package org.skypro.skyshop;
 
 import org.skypro.skyshop.basket.ProductBasket;
+import org.skypro.skyshop.content.Article;
+import org.skypro.skyshop.content.SearchEngine;
+import org.skypro.skyshop.content.Searchable;
 import org.skypro.skyshop.product.DiscountedProduct;
 import org.skypro.skyshop.product.FixPriceProduct;
 import org.skypro.skyshop.product.Product;
 import org.skypro.skyshop.product.SimpleProduct;
+
+import java.util.Arrays;
 
 public class App {
     public static void main(String[] args) {
@@ -15,7 +20,8 @@ public class App {
         Product cheese = new DiscountedProduct("Cheese", 200, 20);
         Product yogurt = new FixPriceProduct("Yogurt");
         Product tomato = new DiscountedProduct("Tomato", 40, 10);
-        Product potato = new SimpleProduct("Potato", 30);;
+        Product potato = new SimpleProduct("Potato", 30);
+        ;
 
         ProductBasket basket = new ProductBasket(5);
 
@@ -60,5 +66,70 @@ public class App {
         //Поиск товара по имени в пустой корзине.
         System.out.println("Поиск товара по имени в пустой корзине.");
         System.out.println(basket.checkProductExist("Strawberry"));
+
+        //Создайте один объект типа SearchEngine
+        System.out.println("Создайте один объект типа SearchEngine");
+        SearchEngine se = new SearchEngine(5);
+
+
+        // Создаем статьи с описаниями товаров
+        Article article1 = new Article(
+                "Яблоки",
+                "Свежие яблоки с местных садов. Идеально подходят для перекуса или приготовления десертов."
+        );
+
+        Article article2 = new Article(
+                "Бананы",
+                "Спелые бананы, богатые калием. Отлично подходят для здорового перекуса."
+        );
+
+        Article article3 = new Article(
+                "Молоко",
+                "Свежее молоко с местной фермы. Идеально для приготовления каш, кофе и других блюд."
+        );
+
+        Article article4 = new Article(
+                "Сыр",
+                "Натуральный сыр, изготовленный из коровьего молока. Отлично подходит для бутербродов и закусок."
+        );
+
+        Article article5 = new Article(
+                "Йогурт",
+                "Натуральный йогурт без добавок. Подходит для завтрака или легкого перекуса."
+        );
+
+        // Добавляем статьи в SearchEngine
+        se.addSearchable(article1);
+        se.addSearchable(article2);
+        se.addSearchable(article3);
+        se.addSearchable(article4);
+        se.addSearchable(article5);
+
+        se.printSearchable();
+
+        // Ищем и выводим результаты
+        System.out.println("Результаты поиска по запросу 'яблоки':");
+        Searchable[] appleResults = se.search("яблоки");
+        for (Searchable result : appleResults) {
+            if (result != null) { // Проверка на null
+                System.out.println(result.getSearchTerm());
+            }
+        }
+
+        System.out.println("\nРезультаты поиска по запросу 'бананы':");
+        Searchable[] bananaResults = se.search("бананы");
+        for (Searchable result : bananaResults) {
+            if (result != null) { // Проверка на null
+                System.out.println(result.getSearchTerm());
+            }
+        }
+
+        System.out.println("\nРезультаты поиска по запросу 'молоко':");
+        Searchable[] milkResults = se.search("молоко");
+        for (Searchable result : milkResults) {
+            if (result != null) { // Проверка на null
+                System.out.println(result.getStringRepresentation());
+            }
+        }
     }
 }
