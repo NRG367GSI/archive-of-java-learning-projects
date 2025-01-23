@@ -2,6 +2,7 @@ package org.skypro.skyshop;
 
 import org.skypro.skyshop.basket.ProductBasket;
 import org.skypro.skyshop.content.Article;
+import org.skypro.skyshop.content.BestResultNotFound;
 import org.skypro.skyshop.content.SearchEngine;
 import org.skypro.skyshop.content.Searchable;
 import org.skypro.skyshop.product.DiscountedProduct;
@@ -158,9 +159,23 @@ public class App {
             System.out.printf("%s\n%s\n%s", e.getMessage(), e.getCause(), Arrays.toString(e.getStackTrace()));
         }
 
+        try {
+            Searchable prod1 = se.substringSearch("яб");
+            System.out.println("Самый подходящий продукт: " + prod1.getSearchTerm());
+        } catch (BestResultNotFound e) {
+            System.out.println(e.getMessage()); // Обработка исключения
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage()); // Обработка невалидного поискового запроса
+        }
 
 
-
-
+        try {
+            Searchable prod2 = se.substringSearch("бя");
+            System.out.println("Самый подходящий продукт: " + prod2.getSearchTerm());
+        } catch (BestResultNotFound e) {
+            System.out.println(e.getMessage()); // Обработка исключения
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage()); // Обработка невалидного поискового запроса
+        }
     }
 }
