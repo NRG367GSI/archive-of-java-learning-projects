@@ -2,6 +2,7 @@ package org.skypro.skyshop;
 
 import org.skypro.skyshop.basket.ProductBasket;
 import org.skypro.skyshop.content.Article;
+import org.skypro.skyshop.content.BestResultNotFound;
 import org.skypro.skyshop.content.SearchEngine;
 import org.skypro.skyshop.content.Searchable;
 import org.skypro.skyshop.product.DiscountedProduct;
@@ -21,7 +22,6 @@ public class App {
         Product yogurt = new FixPriceProduct("Yogurt");
         Product tomato = new DiscountedProduct("Tomato", 40, 10);
         Product potato = new SimpleProduct("Potato", 30);
-        ;
 
         ProductBasket basket = new ProductBasket(5);
 
@@ -130,6 +130,52 @@ public class App {
             if (result != null) { // Проверка на null
                 System.out.println(result.getStringRepresentation());
             }
+        }
+
+        System.out.println("\nДемонстрация проверки данных в классе:\n");
+        //Создайте несколько продуктов и нарочно заполните их поля неправильно
+        try {
+            Product nullProduct = new SimpleProduct("", 10);
+        } catch (IllegalArgumentException e) {
+            System.out.printf("%s\n%s\n%s", e.getMessage(), e.getCause(), Arrays.toString(e.getStackTrace()));
+        }
+        System.out.println("\n");
+
+        try {
+            Product isBlankProduct = new SimpleProduct("     ", 20);
+        } catch (IllegalArgumentException e) {
+            System.out.printf("%s\n%s\n%s", e.getMessage(), e.getCause(), Arrays.toString(e.getStackTrace()));
+        }
+        System.out.println("\n");
+        try {
+            Product zeroProductPrice = new SimpleProduct("zeroProductPrice", 0);
+        } catch (IllegalArgumentException e) {
+            System.out.printf("%s\n%s\n%s", e.getMessage(), e.getCause(), Arrays.toString(e.getStackTrace()));
+        }
+        System.out.println("\n");
+        try {
+            Product discountSubZero = new DiscountedProduct("discountSubZero", 10, -10);
+        } catch (IllegalArgumentException e)  {
+            System.out.printf("%s\n%s\n%s", e.getMessage(), e.getCause(), Arrays.toString(e.getStackTrace()));
+        }
+
+        try {
+            Searchable prod1 = se.substringSearch("яб");
+            System.out.println("Самый подходящий продукт: " + prod1.getSearchTerm());
+        } catch (BestResultNotFound e) {
+            System.out.println(e.getMessage()); // Обработка исключения
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage()); // Обработка невалидного поискового запроса
+        }
+
+
+        try {
+            Searchable prod2 = se.substringSearch("бя");
+            System.out.println("Самый подходящий продукт: " + prod2.getSearchTerm());
+        } catch (BestResultNotFound e) {
+            System.out.println(e.getMessage()); // Обработка исключения
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage()); // Обработка невалидного поискового запроса
         }
     }
 }
