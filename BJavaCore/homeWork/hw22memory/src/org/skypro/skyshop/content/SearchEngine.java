@@ -12,7 +12,7 @@ public class SearchEngine {
     }
 
     public List <Searchable> search(String searchTerm) {
-        List <Searchable> results = new LinkedList<Searchable>();
+        List <Searchable> results = new LinkedList<>();
         for (Searchable term : searchables) {
             if (term != null && term.getSearchTerm().toLowerCase().contains(searchTerm.toLowerCase())) {
                 results.add(term);

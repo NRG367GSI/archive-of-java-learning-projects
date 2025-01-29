@@ -24,7 +24,7 @@ public class App {
         Product tomato = new DiscountedProduct("Tomato", 40, 10);
         Product potato = new SimpleProduct("Potato", 30);
 
-        ProductBasket basket = new ProductBasket(5);
+        ProductBasket basket = new ProductBasket();
 
         //Добавление продукта в корзину.
         basket.addProduct(apple);

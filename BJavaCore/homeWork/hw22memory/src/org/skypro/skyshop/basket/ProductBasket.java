@@ -7,8 +7,8 @@ import java.util.*;
 public class ProductBasket {
     private final List<Product> basket;
 
-    public ProductBasket(int size) {
-        this.basket = new LinkedList<Product>();
+    public ProductBasket() {
+        this.basket = new LinkedList<>();
     }
 
     public void addProduct(Product product) {
