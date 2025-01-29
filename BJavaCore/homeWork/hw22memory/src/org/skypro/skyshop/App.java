@@ -32,10 +32,6 @@ public class App {
         basket.addProduct(cheese);
         basket.addProduct(yogurt);
 
-        //Добавление продукта в заполненную корзину, в которой нет свободного места.
-        basket.addProduct(tomato);
-        basket.addProduct(potato);
-
         //Печать содержимого корзины с несколькими товарами.
         System.out.println("Содержимое корзины:");
         basket.printBasket();
@@ -177,5 +173,8 @@ public class App {
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage()); // Обработка невалидного поискового запроса
         }
+
+
     }
 }
+
