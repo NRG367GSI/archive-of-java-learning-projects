@@ -11,6 +11,7 @@ import org.skypro.skyshop.product.Product;
 import org.skypro.skyshop.product.SimpleProduct;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class App {
     public static void main(String[] args) {
@@ -81,7 +82,7 @@ public class App {
 
         //Создайте один объект типа SearchEngine
         System.out.println("Создайте один объект типа SearchEngine");
-        SearchEngine se = new SearchEngine(5);
+        SearchEngine se = new SearchEngine();
 
 
         // Создаем статьи с описаниями товаров
@@ -121,7 +122,7 @@ public class App {
 
         // Ищем и выводим результаты
         System.out.println("Результаты поиска по запросу 'яблоки':");
-        Searchable[] appleResults = se.search("яблоки");
+        List <Searchable> appleResults = se.search("яблоки");
         for (Searchable result : appleResults) {
             if (result != null) { // Проверка на null
                 System.out.println(result.getSearchTerm());
@@ -129,7 +130,7 @@ public class App {
         }
 
         System.out.println("\nРезультаты поиска по запросу 'бананы':");
-        Searchable[] bananaResults = se.search("бананы");
+        List <Searchable> bananaResults = se.search("бананы");
         for (Searchable result : bananaResults) {
             if (result != null) { // Проверка на null
                 System.out.println(result.getSearchTerm());
@@ -137,7 +138,7 @@ public class App {
         }
 
         System.out.println("\nРезультаты поиска по запросу 'молоко':");
-        Searchable[] milkResults = se.search("молоко");
+        List <Searchable> milkResults = se.search("молоко");
         for (Searchable result : milkResults) {
             if (result != null) { // Проверка на null
                 System.out.println(result.getStringRepresentation());
