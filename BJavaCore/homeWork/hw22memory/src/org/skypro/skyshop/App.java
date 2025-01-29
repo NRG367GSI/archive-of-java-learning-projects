@@ -48,6 +48,22 @@ public class App {
         System.out.println("Проверка продукта в корзине по имени");
         System.out.println(basket.checkProductExist("Strawberry"));
 
+        //Удалить существующий продукт из корзины.
+        System.out.println("_________\nУдалить существующий продукт из корзины.");
+        System.out.println(basket.removeByName("Banana"));
+        basket.printBasket();
+        System.out.println("_________\n");
+
+        //Удалить несуществующий продукт.
+        System.out.println("_________\nУдалить несуществующий продукт.");
+        if (basket.removeByName("cranberry").isEmpty()) {
+            System.out.println("Список пуст!");
+        } else {
+            basket.removeByName("cranberry");
+        }
+        basket.printBasket();
+        System.out.println("_________\n");
+
         //Очистка корзины.
         System.out.println("Очистка корзины");
         basket.clearBasket();
@@ -173,8 +189,6 @@ public class App {
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage()); // Обработка невалидного поискового запроса
         }
-
-
     }
 }
 
