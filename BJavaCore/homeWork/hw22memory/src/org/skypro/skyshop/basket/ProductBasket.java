@@ -59,4 +59,17 @@ public class ProductBasket {
     public void clearBasket() {
         basket.clear();
     }
+
+    public List<Product> removeByName(String name) {
+        List<Product> removedProducts = new LinkedList<>();
+        Iterator<Product> iterator = basket.listIterator();
+        while (iterator.hasNext()) {
+            Product product = iterator.next();
+            if (product.getProductName().equalsIgnoreCase(name)) {
+                removedProducts.add(product);
+                iterator.remove();
+            }
+        }
+        return removedProducts;
+    }
 }
