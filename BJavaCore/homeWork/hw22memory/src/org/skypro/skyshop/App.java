@@ -27,11 +27,11 @@ public class App {
         ProductBasket basket = new ProductBasket();
 
         //Добавление продукта в корзину.
-        basket.addProduct(apple);
-        basket.addProduct(banana);
-        basket.addProduct(milk);
-        basket.addProduct(cheese);
-        basket.addProduct(yogurt);
+        basket.addProduct("apple", apple);
+        basket.addProduct("banana", banana);
+        basket.addProduct("milk", milk);
+        basket.addProduct("cheese", cheese);
+        basket.addProduct("yogurt", yogurt);
 
         //Печать содержимого корзины с несколькими товарами.
         System.out.println("Содержимое корзины:");
