@@ -11,6 +11,7 @@ import org.skypro.skyshop.product.Product;
 import org.skypro.skyshop.product.SimpleProduct;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class App {
     public static void main(String[] args) {
@@ -23,7 +24,7 @@ public class App {
         Product tomato = new DiscountedProduct("Tomato", 40, 10);
         Product potato = new SimpleProduct("Potato", 30);
 
-        ProductBasket basket = new ProductBasket(5);
+        ProductBasket basket = new ProductBasket();
 
         //Добавление продукта в корзину.
         basket.addProduct(apple);
@@ -31,10 +32,6 @@ public class App {
         basket.addProduct(milk);
         basket.addProduct(cheese);
         basket.addProduct(yogurt);
-
-        //Добавление продукта в заполненную корзину, в которой нет свободного места.
-        basket.addProduct(tomato);
-        basket.addProduct(potato);
 
         //Печать содержимого корзины с несколькими товарами.
         System.out.println("Содержимое корзины:");
@@ -51,6 +48,22 @@ public class App {
         //Поиск товара, которого нет в корзине.
         System.out.println("Проверка продукта в корзине по имени");
         System.out.println(basket.checkProductExist("Strawberry"));
+
+        //Удалить существующий продукт из корзины.
+        System.out.println("_________\nУдалить существующий продукт из корзины.");
+        System.out.println(basket.removeByName("Banana"));
+        basket.printBasket();
+        System.out.println("_________\n");
+
+        //Удалить несуществующий продукт.
+        System.out.println("_________\nУдалить несуществующий продукт.");
+        if (basket.removeByName("cranberry").isEmpty()) {
+            System.out.println("Список пуст!");
+        } else {
+            basket.removeByName("cranberry");
+        }
+        basket.printBasket();
+        System.out.println("_________\n");
 
         //Очистка корзины.
         System.out.println("Очистка корзины");
@@ -69,7 +82,7 @@ public class App {
 
         //Создайте один объект типа SearchEngine
         System.out.println("Создайте один объект типа SearchEngine");
-        SearchEngine se = new SearchEngine(5);
+        SearchEngine se = new SearchEngine();
 
 
         // Создаем статьи с описаниями товаров
@@ -109,7 +122,7 @@ public class App {
 
         // Ищем и выводим результаты
         System.out.println("Результаты поиска по запросу 'яблоки':");
-        Searchable[] appleResults = se.search("яблоки");
+        List <Searchable> appleResults = se.search("яблоки");
         for (Searchable result : appleResults) {
             if (result != null) { // Проверка на null
                 System.out.println(result.getSearchTerm());
@@ -117,7 +130,7 @@ public class App {
         }
 
         System.out.println("\nРезультаты поиска по запросу 'бананы':");
-        Searchable[] bananaResults = se.search("бананы");
+        List <Searchable> bananaResults = se.search("бананы");
         for (Searchable result : bananaResults) {
             if (result != null) { // Проверка на null
                 System.out.println(result.getSearchTerm());
@@ -125,7 +138,7 @@ public class App {
         }
 
         System.out.println("\nРезультаты поиска по запросу 'молоко':");
-        Searchable[] milkResults = se.search("молоко");
+        List <Searchable> milkResults = se.search("молоко");
         for (Searchable result : milkResults) {
             if (result != null) { // Проверка на null
                 System.out.println(result.getStringRepresentation());
@@ -179,3 +192,4 @@ public class App {
         }
     }
 }
+
