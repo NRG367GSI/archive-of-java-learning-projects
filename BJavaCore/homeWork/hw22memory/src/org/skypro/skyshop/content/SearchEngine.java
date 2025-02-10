@@ -3,10 +3,10 @@ package org.skypro.skyshop.content;
 import java.util.*;
 
 public class SearchEngine {
-    private final List <Searchable> searchables;
+    private final Set <Searchable> searchables;
 
     public SearchEngine() {
-        this.searchables = new LinkedList<>();
+        this.searchables = new HashSet<>();
     }
 
     public Map<String, Searchable> search(String searchTerm) {
