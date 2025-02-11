@@ -38,4 +38,5 @@ public final class Article implements Searchable{
     public int hashCode() {
         return Objects.hashCode(title);
     }
+
 }

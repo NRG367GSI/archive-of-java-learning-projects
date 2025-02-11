@@ -9,11 +9,11 @@ public class SearchEngine {
         this.searchables = new HashSet<>();
     }
 
-    public Map<String, Searchable> search(String searchTerm) {
-        Map <String, Searchable> results = new TreeMap<>();
+    public Set<Searchable> search(String searchTerm) {
+        Set <Searchable> results = new TreeSet<>();
         for (Searchable term : searchables) {
             if (term != null && term.getSearchTerm().toLowerCase().contains(searchTerm.toLowerCase())) {
-                results.put(searchTerm.toLowerCase(), term);
+                results.add(term);
             }
         }
         return results;
