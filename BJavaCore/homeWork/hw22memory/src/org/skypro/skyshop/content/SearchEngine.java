@@ -6,7 +6,7 @@ public class SearchEngine {
     private final Set <Searchable> searchables;
 
     public SearchEngine() {
-        this.searchables = new TreeSet<>(new ArtycleComparator());
+        this.searchables = new HashSet<>();
     }
 
     public Set<Searchable> search(String searchTerm) {

@@ -124,6 +124,7 @@ public class App {
         se.printSearchable();
         System.out.println("\n");
 
+
         // Ищем и выводим результаты
         System.out.println("Результаты поиска по запросу 'яблоки':");
         Set<Searchable> appleResults = se.search("яблоки");
