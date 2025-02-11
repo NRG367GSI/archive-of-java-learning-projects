@@ -6,11 +6,11 @@ public class SearchEngine {
     private final Set <Searchable> searchables;
 
     public SearchEngine() {
-        this.searchables = new HashSet<>();
+        this.searchables = new TreeSet<>(new ArtycleComparator());
     }
 
     public Set<Searchable> search(String searchTerm) {
-        Set <Searchable> results = new TreeSet<>();
+        Set <Searchable> results = new TreeSet<>(new ArtycleComparator());
         for (Searchable term : searchables) {
             if (term != null && term.getSearchTerm().toLowerCase().contains(searchTerm.toLowerCase())) {
                 results.add(term);

@@ -120,7 +120,9 @@ public class App {
         se.addSearchable(article4);
         se.addSearchable(article5);
 
+        System.out.println("\nВывод в консоль статей");
         se.printSearchable();
+        System.out.println("\n");
 
         // Ищем и выводим результаты
         System.out.println("Результаты поиска по запросу 'яблоки':");
