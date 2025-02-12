@@ -10,10 +10,7 @@ import org.skypro.skyshop.product.FixPriceProduct;
 import org.skypro.skyshop.product.Product;
 import org.skypro.skyshop.product.SimpleProduct;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class App {
     public static void main(String[] args) {
@@ -124,7 +121,6 @@ public class App {
         se.printSearchable();
         System.out.println("\n");
 
-
         // Ищем и выводим результаты
         System.out.println("Результаты поиска по запросу 'яблоки':");
         Set<Searchable> appleResults = se.search("яблоки");
@@ -134,7 +130,7 @@ public class App {
             }
         }
 
-        System.out.println("Результаты поиска по запросу 'яблоки':");
+        System.out.println("Результаты поиска по запросу 'бананы':");
         Set<Searchable> bananaResults = se.search("бананы");
         for (Searchable result : bananaResults) {
             if (result != null) { // Проверка на null
@@ -142,7 +138,7 @@ public class App {
             }
         }
 
-        System.out.println("Результаты поиска по запросу 'яблоки':");
+        System.out.println("Результаты поиска по запросу 'молоко':");
         Set<Searchable> milkResults = se.search("молоко");
         for (Searchable result : milkResults) {
             if (result != null) { // Проверка на null
