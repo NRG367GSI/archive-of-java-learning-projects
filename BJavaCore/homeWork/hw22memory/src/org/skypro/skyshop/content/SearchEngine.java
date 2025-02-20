@@ -1,6 +1,7 @@
 package org.skypro.skyshop.content;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class SearchEngine {
     private final Set <Searchable> searchables;
@@ -36,34 +37,27 @@ public class SearchEngine {
             throw new IllegalArgumentException("Поисковая строка не может быть пустой или null");
         }
 
-        Searchable mostRelevant = null;
-        int maxCount = 0;
+        String subString = search.toLowerCase(Locale.ROOT);
 
-        for (Searchable product : searchables) {
-            if (product == null) {
-                continue;
-            }
-
-            String term = product.getSearchTerm().toLowerCase();
-            String subString = search.toLowerCase(Locale.ROOT);
-            int count = 0;
-            int index = 0;
-
-            while ((index = term.indexOf(subString, index)) != -1) {
-                count++;
-                index += subString.length();
-            }
-
-            if (count > maxCount) {
-                maxCount = count;
-                mostRelevant = product;
-            }
-        }
-
-        if (mostRelevant == null) {
+        TreeSet<Searchable> resultSet = searchables.stream()
+                .filter(Objects::nonNull)
+                .collect(Collectors.toCollection(() -> new TreeSet<>(Comparator.comparingInt((Searchable product) -> {
+                    String term = product.getSearchTerm().toLowerCase();
+                    int count = 0;
+                    int index = 0;
+                    while ((index = term.indexOf(subString, index)) != -1) {
+                        count++;
+                        index += subString.length();
+                    }
+                    return count;
+                })
+                        .reversed()
+                        .thenComparing(Searchable::getSearchTerm)
+                )));
+        if (resultSet.isEmpty()) {
             throw new BestResultNotFound(search);
         }
 
-        return mostRelevant;
+        return resultSet.first();
     }
 }
