@@ -10,9 +10,7 @@ import org.skypro.skyshop.product.FixPriceProduct;
 import org.skypro.skyshop.product.Product;
 import org.skypro.skyshop.product.SimpleProduct;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class App {
     public static void main(String[] args) {
@@ -119,30 +117,32 @@ public class App {
         se.addSearchable(article4);
         se.addSearchable(article5);
 
+        System.out.println("\nВывод в консоль статей");
         se.printSearchable();
+        System.out.println("\n");
 
         // Ищем и выводим результаты
         System.out.println("Результаты поиска по запросу 'яблоки':");
-        Map<String, Searchable> appleResults = se.search("яблоки");
-        for (Map.Entry<String, Searchable> result : appleResults.entrySet()) {
-            if (result.getValue() != null) { // Проверка на null
-                System.out.println(result.getValue().getSearchTerm());
+        Set<Searchable> appleResults = se.search("яблоки");
+        for (Searchable result : appleResults) {
+            if (result != null) { // Проверка на null
+                System.out.println(result.getSearchTerm());
             }
         }
 
-        System.out.println("Результаты поиска по запросу 'яблоки':");
-        Map<String, Searchable> bananaResults = se.search("бананы");
-        for (Map.Entry<String, Searchable> result : bananaResults.entrySet()) {
-            if (result.getValue() != null) { // Проверка на null
-                System.out.println(result.getValue().getSearchTerm());
+        System.out.println("Результаты поиска по запросу 'бананы':");
+        Set<Searchable> bananaResults = se.search("бананы");
+        for (Searchable result : bananaResults) {
+            if (result != null) { // Проверка на null
+                System.out.println(result.getSearchTerm());
             }
         }
 
-        System.out.println("Результаты поиска по запросу 'яблоки':");
-        Map<String, Searchable> milkResults = se.search("молоко");
-        for (Map.Entry<String, Searchable> result : milkResults.entrySet()) {
-            if (result.getValue() != null) { // Проверка на null
-                System.out.println(result.getValue().getSearchTerm());
+        System.out.println("Результаты поиска по запросу 'молоко':");
+        Set<Searchable> milkResults = se.search("молоко");
+        for (Searchable result : milkResults) {
+            if (result != null) { // Проверка на null
+                System.out.println(result.getSearchTerm());
             }
         }
 

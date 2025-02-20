@@ -3,17 +3,17 @@ package org.skypro.skyshop.content;
 import java.util.*;
 
 public class SearchEngine {
-    private final List <Searchable> searchables;
+    private final Set <Searchable> searchables;
 
     public SearchEngine() {
-        this.searchables = new LinkedList<>();
+        this.searchables = new HashSet<>();
     }
 
-    public Map<String, Searchable> search(String searchTerm) {
-        Map <String, Searchable> results = new TreeMap<>();
+    public Set<Searchable> search(String searchTerm) {
+        Set <Searchable> results = new TreeSet<>(new ArtycleComparator());
         for (Searchable term : searchables) {
             if (term != null && term.getSearchTerm().toLowerCase().contains(searchTerm.toLowerCase())) {
-                results.put(searchTerm.toLowerCase(), term);
+                results.add(term);
             }
         }
         return results;
