@@ -23,35 +23,41 @@ public class ProductBasket {
     }
 
     public int totalCost() {
-        int total = 0;
-        for (Map.Entry<String, List<Product>> entry : this.basket.entrySet())
-            total += entry.getValue().iterator().next().getPriceProduct();
-        return total;
+        return basket.values().stream().
+                flatMap(Collection::stream)
+                .mapToInt(Product::getPriceProduct).sum();
     }
 
     public void printBasket() {
-        int specialCount = 0;
-        boolean isEmpty = false;
-        int cost = 0;
-        for (Map.Entry<String, List<Product>> entry : this.basket.entrySet()) {
-            if (entry != null && entry.getValue() != null) {
-                for (Product product : entry.getValue())
-                    if (product.isSpecial()) {
-                        specialCount ++;
-                }
-                isEmpty = true;
-                System.out.println(entry);
-                cost += entry.getValue().iterator()
-                        .next()
-                        .getPriceProduct();
+        if (basket.isEmpty()) {
+            System.out.println("Корзина пуста!");
+            return;
+        }
+
+        basket.forEach((key, products) -> {
+            if (products != null) {
+                System.out.println(key + ": " + products);
             }
-        }
-        if (isEmpty) {
-            System.out.println("Итого: " + cost);
-            System.out.println("Специальных товаров: " + specialCount + "\n");
-        } else {
-            System.out.println("Корзина пуста!\n");
-        }
+        });
+
+        int totalCost = basket.values()
+                .stream().flatMap(Collection::stream)
+                .mapToInt(Product::getPriceProduct)
+                .sum();
+
+
+        int specialCount = getSpecialCount();
+
+        System.out.println("Итого: " + totalCost);
+        System.out.println("Специальных товаров: " + specialCount + "\n");
+    }
+
+    private int getSpecialCount() {
+        return (int) basket.values()
+                .stream()
+                .flatMap(Collection::stream)
+                .filter(Product::isSpecial)
+                .count();
     }
 
     public boolean checkProductExist(String nameProduct) {
